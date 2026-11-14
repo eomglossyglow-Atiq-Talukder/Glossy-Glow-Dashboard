@@ -40,6 +40,28 @@
     </style>
 </head>
 <body class="flex h-screen overflow-hidden bg-darkbg text-slate-100">
+<!-- Glossy Glow Login & Sign Up Screen -->
+<div id="auth-screen" style="position: fixed; inset: 0; background: #0f172a; color: white; display: flex; justify-content: center; align-items: center; z-index: 9999; font-family: sans-serif;">
+  <div style="background: #1e293b; padding: 30px; border-radius: 12px; width: 350px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+    <h2 id="auth-title" style="text-align: center; margin-bottom: 20px; color: #f472b6;">Glossy Glow Login</h2>
+    
+    <input type="email" id="user-email" placeholder="আপনার ইমেইল দিন" style="width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box;">
+    
+    <input type="password" id="user-password" placeholder="পাসওয়ার্ড দিন (কমপক্ষে ৬ অক্ষর)" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: white; box-sizing: border-box;">
+    
+    <button id="auth-btn" onclick="handleAuth()" style="width: 100%; padding: 10px; background: #ec4899; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Login করুন</button>
+    
+    <p id="auth-error" style="color: #f87171; font-size: 13px; margin-top: 10px; text-align: center;"></p>
+    
+    <p style="text-align: center; font-size: 14px; margin-top: 15px; color: #94a3b8;">
+      <span id="toggle-text">নতুন অ্যাকাউন্ট খুলতে চান?</span> 
+      <a href="#" onclick="toggleAuthMode()" id="toggle-link" style="color: #f472b6; text-decoration: none; font-weight: bold;">Sign Up করুন</a>
+    </p>
+  </div>
+</div>
+
+<!-- Logout Button -->
+<button id="logout-btn" onclick="logoutUser()" style="display: none; position: fixed; top: 15px; right: 20px; z-index: 9998; background: #ef4444; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; font-weight: bold;">Logout</button>
 
     <!-- Sidebar Navigation -->
     <aside class="w-72 bg-darkcard border-r border-darkborder flex flex-col flex-shrink-0 z-30">
@@ -924,5 +946,60 @@
             initDashboardCharts();
         });
     </script>
+    <script type="module">
+    import { initializeApp } from "https://gstatic.com";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://gstatic.com";
+  const firebaseConfig = {
+    apiKey: "AIzaSyD67_pdiXUkN3VsXcy0sJtBrYI_ijzQZaA",
+    authDomain: "glossy-glow-auth.firebaseapp.com",
+    projectId: "glossy-glow-auth",
+    storageBucket: "glossy-glow-auth.firebasestorage.app",
+    messagingSenderId: "380883757110",
+    appId: "1:380883757110:web:92811d7f902765796f1097",
+    measurementId: "G-Q2K1HGD54G"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  let isSignup = false;
+
+  window.toggleAuthMode = function() {
+    isSignup = !isSignup;
+    document.getElementById('auth-title').innerText = isSignup ? "Create New Account" : "Glossy Glow Login";
+    document.getElementById('auth-btn').innerText = isSignup ? "Sign Up" : "Login";
+    document.getElementById('toggle-text').innerText = isSignup ? "Already have an account?" : "Don't have an account?";
+    document.getElementById('toggle-link').innerText = isSignup ? "Login" : "Sign Up";
+    document.getElementById('auth-error').innerText = "";
+  };
+
+  window.handleAuth = function() {
+    const email = document.getElementById('user-email').value;
+    const password = document.getElementById('user-password').value;
+    const errorBox = document.getElementById('auth-error');
+
+    if (isSignup) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .catch((error) => { errorBox.innerText = "Error: " + error.message; });
+    } else {
+      signInWithEmailAndPassword(auth, email, password)
+        .catch((error) => { errorBox.innerText = "Invalid email or password!"; });
+    }
+  };
+
+  window.logoutUser = function() {
+    signOut(auth);
+  };
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.getElementById('auth-screen').style.display = 'none';
+      document.getElementById('logout-btn').style.display = 'block';
+    } else {
+      document.getElementById('auth-screen').style.display = 'flex';
+      document.getElementById('logout-btn').style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
