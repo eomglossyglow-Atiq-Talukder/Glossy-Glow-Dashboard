@@ -125,7 +125,6 @@
             <div>
                 <p class="px-3 text-[10px] font-semibold tracking-wider text-slate-400 uppercase mb-2">Operations & Teams</p>
                 <nav class="space-y-1">
-                    <!-- Sales & Customer Experience with nested Tele-Sales & Meta Sales -->
                     <div>
                         <a href="#" onclick="switchTab('customersales', event, this)" class="menu-item flex items-center justify-between px-3 py-2 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition">
                             <div class="flex items-center gap-3">
@@ -213,7 +212,6 @@
 
     <!-- Main Content Area -->
     <div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-darkbg">
-        <!-- Top Navigation Header -->
         <header class="h-20 bg-darkcard border-b border-darkborder flex items-center justify-between px-8 flex-shrink-0 z-20">
             <div class="flex items-center gap-4">
                 <h2 id="pageHeaderTitle" class="text-xl font-bold tracking-tight text-white">Operational Intelligence</h2>
@@ -242,9 +240,7 @@
 
         <!-- Dynamic Content Body -->
         <main id="mainContentArea" class="flex-1 overflow-y-auto p-8 space-y-6">
-            <!-- Default Dashboard View -->
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
-                <!-- Trend Analytics Chart -->
                 <div class="xl:col-span-2 bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
                     <div class="flex items-center justify-between mb-4">
                         <div>
@@ -261,7 +257,6 @@
                     </div>
                 </div>
 
-                <!-- Dashboards & Actions -->
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-base font-bold text-white">DASHBOARDS & ACTIONS</h3>
@@ -286,7 +281,6 @@
                 </div>
             </div>
 
-            <!-- Lower Stat Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl flex flex-col justify-between">
                     <div class="flex items-center justify-between">
@@ -416,305 +410,78 @@
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Social Media & Community Engagement</h3>
                     <p class="text-xs text-slate-400">Monitoring customer community feedback, campaign reach, and engagement metrics.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Active Campaigns</p>
-                            <h4 class="text-2xl font-black text-white mt-1">12 Campaigns</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Community Response Rate</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">98.4%</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Total Followers Reached</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">145,200</h4>
-                        </div>
-                    </div>
                 </div>
             `,
             seo: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">SEO & Organic Growth Department</h3>
                     <p class="text-xs text-slate-400">Supervised by Asma-ul-husna (SEO Specialist).</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Indexed Keywords</p>
-                            <h4 class="text-2xl font-black text-white mt-1">1,420+</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Organic Traffic (MoM)</p>
-                            <h4 class="text-2xl font-black text-teal-400 mt-1">+34.8%</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Domain Authority</p>
-                            <h4 class="text-2xl font-black text-blue-400 mt-1">42 / 100</h4>
-                        </div>
-                    </div>
                 </div>
             `,
             content: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Content & Live Updates Department</h3>
                     <p class="text-xs text-slate-400">Manage modeling, creative shooting, video editing, and live broadcast updates.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5 flex flex-col justify-between">
-                            <div>
-                                <span class="px-2 py-0.5 rounded bg-pink-600/20 text-pink-400 text-[10px] font-bold">GG-EMP-020</span>
-                                <h4 class="text-base font-bold text-white mt-2">Rokeya Akter Rita</h4>
-                                <p class="text-xs text-slate-400 mt-1">Model & Content Creator</p>
-                            </div>
-                            <button onclick="switchTab('rita_activity', event, this)" class="mt-4 px-3 py-2 rounded-lg bg-pink-600 text-white text-xs font-semibold hover:bg-pink-700 transition">View Rita's Activity & Report</button>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5 flex flex-col justify-between">
-                            <div>
-                                <span class="px-2 py-0.5 rounded bg-pink-600/20 text-pink-400 text-[10px] font-bold">GG-EMP-021</span>
-                                <h4 class="text-base font-bold text-white mt-2">Maimuna</h4>
-                                <p class="text-xs text-slate-400 mt-1">Model & Content Creator</p>
-                            </div>
-                            <button onclick="switchTab('maimuna_activity', event, this)" class="mt-4 px-3 py-2 rounded-lg bg-pink-600 text-white text-xs font-semibold hover:bg-pink-700 transition">View Maimuna's Activity & Report</button>
-                        </div>
-                    </div>
                 </div>
             `,
             rita_activity: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Rokeya Akter Rita - Activity & Report</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Model & Content Creator (Employee ID: GG-EMP-020)</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-emerald-600/20 text-emerald-400 text-xs font-semibold">Active Status</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Completed Shoots (This Month)</p>
-                            <h4 class="text-2xl font-black text-white mt-1">24 Reels / Videos</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Live Sessions Hosted</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">16 Live Streams</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Engagement Impact</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">High Conversion</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Rokeya Akter Rita - Activity & Report</h3>
+                    <p class="text-xs text-slate-400">Model & Content Creator (Employee ID: GG-EMP-020)</p>
                 </div>
             `,
             maimuna_activity: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Maimuna - Activity & Report</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Model & Content Creator (Employee ID: GG-EMP-021)</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-emerald-600/20 text-emerald-400 text-xs font-semibold">Active Status</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Completed Shoots (This Month)</p>
-                            <h4 class="text-2xl font-black text-white mt-1">22 Reels / Videos</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Live Sessions Hosted</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">14 Live Streams</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Engagement Impact</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">Optimal Growth</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Maimuna - Activity & Report</h3>
+                    <p class="text-xs text-slate-400">Model & Content Creator (Employee ID: GG-EMP-021)</p>
                 </div>
             `,
             customersales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Sales & Customer Experience Hub</h3>
-                    <p class="text-xs text-slate-400">Overview of all sales channels including Tele-Sales, Meta Channels (FB, WhatsApp, IG, TikTok), and Website Sales.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <h4 class="text-sm font-bold text-white mb-2">Tele-Sales Department</h4>
-                            <p class="text-xs text-slate-400 mb-4">Direct customer calling, order confirmation, and upselling.</p>
-                            <button onclick="switchTab('sales', event, this)" class="px-3 py-1.5 rounded-lg bg-pink-600 text-white text-xs font-medium">Open Tele-Sales</button>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <h4 class="text-sm font-bold text-white mb-2">Digital Channel (Meta) Sales</h4>
-                            <p class="text-xs text-slate-400 mb-4">Facebook, WhatsApp, Instagram, and TikTok sales operations.</p>
-                            <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-medium">Open Meta Sales</button>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <h4 class="text-sm font-bold text-white mb-2">Website Sales</h4>
-                            <p class="text-xs text-slate-400 mb-4">E-commerce store transactions and automated checkout tracking.</p>
-                            <button onclick="switchTab('websitesales', event, this)" class="px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-medium">Open Website Sales</button>
-                        </div>
-                    </div>
+                    <p class="text-xs text-slate-400">Overview of all sales channels including Tele-Sales, Meta Channels, and Website Sales.</p>
                 </div>
             `,
             sales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Tele-Sales Department</h3>
                     <p class="text-xs text-slate-400">Managing outbound tele-sales and order processing for Glossy Glow.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Today's Calls</p>
-                            <h4 class="text-2xl font-black text-white mt-1">340 Calls</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Confirmed Orders</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">186 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Conversion Rate</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">54.7%</h4>
-                        </div>
-                    </div>
                 </div>
             `,
             metasales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Digital Channel (Meta) Sales Hub</h3>
-                    <p class="text-xs text-slate-400">Select any specific social channel below to view channel performance and assigned representatives.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                        <div onclick="switchTab('fb_sales', event, this)" class="cursor-pointer bg-[#0b0f19] border border-darkborder hover:border-blue-500 rounded-xl p-5 transition">
-                            <i class="fa-brands fa-facebook text-blue-500 text-2xl mb-3"></i>
-                            <h4 class="text-sm font-bold text-white">Facebook Sales</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Assigned: Sadia Jahan (GG-EMP-013)</p>
-                        </div>
-                        <div onclick="switchTab('wa_sales', event, this)" class="cursor-pointer bg-[#0b0f19] border border-darkborder hover:border-green-500 rounded-xl p-5 transition">
-                            <i class="fa-brands fa-whatsapp text-green-500 text-2xl mb-3"></i>
-                            <h4 class="text-sm font-bold text-white">WhatsApp Sales</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Assigned: Shanta Islam Dristy (GG-EMP-014)</p>
-                        </div>
-                        <div onclick="switchTab('ig_sales', event, this)" class="cursor-pointer bg-[#0b0f19] border border-darkborder hover:border-pink-500 rounded-xl p-5 transition">
-                            <i class="fa-brands fa-instagram text-pink-500 text-2xl mb-3"></i>
-                            <h4 class="text-sm font-bold text-white">Instagram Sales</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Assigned: Mehedi Hasan (GG-EMP-015)</p>
-                        </div>
-                        <div onclick="switchTab('tt_sales', event, this)" class="cursor-pointer bg-[#0b0f19] border border-darkborder hover:border-cyan-400 rounded-xl p-5 transition">
-                            <i class="fa-brands fa-tiktok text-cyan-400 text-2xl mb-3"></i>
-                            <h4 class="text-sm font-bold text-white">Tiktok Sales</h4>
-                            <p class="text-[11px] text-slate-400 mt-1">Assigned Team</p>
-                        </div>
-                    </div>
+                    <p class="text-xs text-slate-400">Select any specific social channel to view channel performance.</p>
                 </div>
             `,
             fb_sales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Facebook Sales Channel</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Assigned Employee: Sadia Jahan (Employee ID: GG-EMP-013)</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-blue-600/20 text-blue-400 text-xs font-semibold"><i class="fa-brands fa-facebook mr-1"></i> FB Active</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Today's FB Inquiries</p>
-                            <h4 class="text-2xl font-black text-white mt-1">420 Chats</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Converted Orders</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">95 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Sales Revenue</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">BDT 185,000</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Facebook Sales Channel</h3>
+                    <p class="text-xs text-slate-400">Assigned Employee: Sadia Jahan (Employee ID: GG-EMP-013)</p>
                 </div>
             `,
             wa_sales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">WhatsApp Sales Channel</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Assigned Employee: Shanta Islam Dristy (Employee ID: GG-EMP-014)</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-green-600/20 text-green-400 text-xs font-semibold"><i class="fa-brands fa-whatsapp mr-1"></i> WA Active</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Today's WA Inquiries</p>
-                            <h4 class="text-2xl font-black text-white mt-1">310 Chats</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Converted Orders</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">82 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Sales Revenue</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">BDT 142,000</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">WhatsApp Sales Channel</h3>
+                    <p class="text-xs text-slate-400">Assigned Employee: Shanta Islam Dristy (Employee ID: GG-EMP-014)</p>
                 </div>
             `,
             ig_sales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Instagram Sales Channel</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Assigned Employee: Mehedi Hasan (Employee ID: GG-EMP-015)</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-pink-600/20 text-pink-400 text-xs font-semibold"><i class="fa-brands fa-instagram mr-1"></i> IG Active</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Today's IG Inquiries</p>
-                            <h4 class="text-2xl font-black text-white mt-1">215 Chats</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Converted Orders</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">48 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Sales Revenue</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">BDT 96,000</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Instagram Sales Channel</h3>
+                    <p class="text-xs text-slate-400">Assigned Employee: Mehedi Hasan (Employee ID: GG-EMP-015)</p>
                 </div>
             `,
             tt_sales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Tiktok Sales Channel</h3>
-                            <p class="text-xs text-slate-400 mt-0.5">Assigned Sales Team</p>
-                        </div>
-                        <span class="px-3 py-1 rounded-lg bg-cyan-600/20 text-cyan-400 text-xs font-semibold"><i class="fa-brands fa-tiktok mr-1"></i> TikTok Active</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Today's TikTok Inquiries</p>
-                            <h4 class="text-2xl font-black text-white mt-1">180 Chats</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Converted Orders</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">38 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Sales Revenue</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">BDT 75,000</h4>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Tiktok Sales Channel</h3>
+                    <p class="text-xs text-slate-400">Assigned Sales Team</p>
                 </div>
             `,
             websitesales: `
                 <div class="bg-darkcard border border-darkborder rounded-2xl p-6 shadow-xl space-y-6">
                     <h3 class="text-lg font-bold text-white">Website Sales Channel</h3>
                     <p class="text-xs text-slate-400">Direct e-commerce website orders and payment gateways tracking.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Website Visits Today</p>
-                            <h4 class="text-2xl font-black text-white mt-1">2,850 Visits</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Web Checkouts</p>
-                            <h4 class="text-2xl font-black text-emerald-400 mt-1">112 Orders</h4>
-                        </div>
-                        <div class="bg-[#0b0f19] border border-darkborder rounded-xl p-5">
-                            <p class="text-xs text-slate-400 font-semibold">Web Revenue</p>
-                            <h4 class="text-2xl font-black text-pink-400 mt-1">BDT 310,000</h4>
-                        </div>
-                    </div>
                 </div>
             `,
             logistics: `
@@ -942,16 +709,18 @@
             }
         }
 
-        // Initialize default dashboard charts on load
         window.addEventListener('DOMContentLoaded', () => {
             initDashboardCharts();
         });
     </script>
+
+    <!-- Firebase Authentication & Approval Firestore Integration -->
     <script type="module">
         const ver = "10.8.0";
         const base = "https://www.gstatic.com/firebasejs/" + ver;  
         const { initializeApp } = await import(base + "/firebase-app.js");
         const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = await import(base + "/firebase-auth.js");
+        const { getFirestore, doc, getDoc, setDoc } = await import(base + "/firebase-firestore.js");
 
         const firebaseConfig = {
             apiKey: "AIzaSyD67_pdiXUkN3VsXcy0sJtBrYI_ijzQZaA",
@@ -965,6 +734,7 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
         let isSignup = false;
 
         window.toggleAuthMode = function() {
@@ -972,32 +742,79 @@
             document.getElementById('auth-title').innerText = isSignup ? "Create New Account" : "Glossy Glow Login";
             document.getElementById('auth-btn').innerText = isSignup ? "Sign Up" : "Login";
             document.getElementById('toggle-text').innerText = isSignup ? "Already have an account?" : "Don't have an account?";
-            document.getElementById('toggle-link').innerText = isSignup ? "Login" : "Sign Up";
+            document.getElementById('toggle-link').innerText = isSignup ? "Sign Up" : "Login";
             document.getElementById('auth-error').innerText = "";
         };
 
-        window.handleAuth = function() {
+        window.handleAuth = async function() {
             const email = document.getElementById('user-email').value;
             const password = document.getElementById('user-password').value;
             const errorBox = document.getElementById('auth-error');
 
+            if (!email || !password) {
+                errorBox.innerText = "দয়া করে ইমেইল এবং পাসওয়ার্ড দিন!";
+                return;
+            }
+
             if (isSignup) {
-                createUserWithEmailAndPassword(auth, email, password)
-                    .catch((error) => { errorBox.innerText = "Error: " + error.message; });
+                try {
+                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+                    
+                    // Save user to Firestore with approved: false by default
+                    await setDoc(doc(db, "users", user.uid), {
+                        email: email,
+                        approved: false, 
+                        createdAt: new Date()
+                    });
+
+                    alert("সফলভাবে Sign Up হয়েছে! অ্যাডমিন অ্যাপ্রুভ করার পর আপনি ড্যাশবোর্ডে প্রবেশ করতে পারবেন।");
+                    signOut(auth);
+                    toggleAuthMode();
+                } catch (error) {
+                    errorBox.innerText = "Error: " + error.message;
+                }
             } else {
-                signInWithEmailAndPassword(auth, email, password)
-                    .catch((error) => { errorBox.innerText = "Invalid email or password!"; });
+                try {
+                    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                    const user = userCredential.user;
+
+                    // Check approval status in Firestore
+                    const userDoc = await getDoc(doc(db, "users", user.uid));
+                    if (userDoc.exists() && userDoc.data().approved) {
+                        document.getElementById('auth-screen').style.display = 'none';
+                        document.getElementById('logout-btn').style.display = 'block';
+                    } else {
+                        errorBox.innerText = "আপনার একাউন্টটি এখনো অ্যাডমিন কর্তৃক অনুমোদিত হয়নি।";
+                        signOut(auth);
+                    }
+                } catch (error) {
+                    errorBox.innerText = "Invalid email or password!";
+                }
             }
         };
 
         window.logoutUser = function() {
-            signOut(auth);
+            signOut(auth).then(() => {
+                window.location.reload();
+            });
         };
 
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user) {
-                document.getElementById('auth-screen').style.display = 'none';
-                document.getElementById('logout-btn').style.display = 'block';
+                try {
+                    const userDoc = await getDoc(doc(db, "users", user.uid));
+                    if (userDoc.exists() && userDoc.data().approved) {
+                        document.getElementById('auth-screen').style.display = 'none';
+                        document.getElementById('logout-btn').style.display = 'block';
+                    } else {
+                        document.getElementById('auth-screen').style.display = 'flex';
+                        document.getElementById('logout-btn').style.display = 'none';
+                        signOut(auth);
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
             } else {
                 document.getElementById('auth-screen').style.display = 'flex';
                 document.getElementById('logout-btn').style.display = 'none';
