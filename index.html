@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glossy Glow - Operational Intelligence Command Center</title>
+    <title>Glossy Glow - World-Class Operations Command Center</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,14 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#07090e',
-                        darkcard: '#0f172a',
+                        darkbg: '#05070a',
+                        darkcard: '#0c1322',
                         darkborder: '#1e293b',
-                        accentblue: '#3b82f6',
-                        accentteal: '#14b8a6',
-                        accentorange: '#f97316',
                         accentpink: '#ec4899',
-                        accentgreen: '#10b981',
+                        accentteal: '#14b8a6',
                         ggpink: '#db2777'
                     }
                 }
@@ -31,108 +28,113 @@
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Google Fonts Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #07090e; color: #f8fafc; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #05070a; color: #f8fafc; overflow-x: hidden; }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: #07090e; }
+        ::-webkit-scrollbar-track { background: #05070a; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
 
+        /* World-Class Glassmorphism & High-End Neon Glows */
         .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(12, 19, 34, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(219, 39, 119, 0.4);
+            box-shadow: 0 35px 70px -10px rgba(219, 39, 119, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
         
         .fade-in {
             animation: fadeInAnim 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
-        
         @keyframes fadeInAnim {
-            from { opacity: 0; transform: translateY(12px) scale(0.98); }
+            from { opacity: 0; transform: translateY(15px) scale(0.98); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        @keyframes floatOrb1 {
+        /* High-End Motion Gradient Orbs */
+        @keyframes moveOrb1 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(50px, 80px) scale(1.1); }
+            50% { transform: translate(80px, 120px) scale(1.2); }
         }
-        @keyframes floatOrb2 {
+        @keyframes moveOrb2 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-60px, -50px) scale(1.15); }
+            50% { transform: translate(-90px, -70px) scale(1.25); }
         }
         .orb-1 {
-            position: absolute;
-            top: 10%;
-            left: 20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(219, 39, 119, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+            position: fixed;
+            top: 5%;
+            left: 15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(219, 39, 119, 0.18) 0%, rgba(5, 7, 10, 0) 70%);
             border-radius: 50%;
             z-index: -1;
-            animation: floatOrb1 10s ease-in-out infinite;
+            pointer-events: none;
+            animation: moveOrb1 12s ease-in-out infinite;
         }
         .orb-2 {
-            position: absolute;
-            bottom: 10%;
-            right: 20%;
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(20, 184, 166, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+            position: fixed;
+            bottom: 5%;
+            right: 15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.14) 0%, rgba(5, 7, 10, 0) 70%);
             border-radius: 50%;
             z-index: -1;
-            animation: floatOrb2 12s ease-in-out infinite;
+            pointer-events: none;
+            animation: moveOrb2 15s ease-in-out infinite;
         }
 
         .auth-input:focus {
             border-color: #db2777;
-            box-shadow: 0 0 15px rgba(219, 39, 119, 0.25);
+            box-shadow: 0 0 20px rgba(219, 39, 119, 0.3);
         }
     </style>
 </head>
-<body class="flex h-screen overflow-hidden bg-darkbg text-slate-100 relative">
+<body class="flex h-screen overflow-hidden bg-darkbg text-slate-100 relative selection:bg-pink-600 selection:text-white">
 
-<!-- Background Animated Orbs -->
+<!-- Dynamic Background Orbs -->
 <div class="orb-1"></div>
 <div class="orb-2"></div>
 
-<!-- Glossy Glow Login & Sign Up Screen -->
-<div id="auth-screen" style="position: fixed; inset: 0; background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); color: white; display: flex; justify-content: center; align-items: center; z-index: 9999;">
-  <div class="glass-card fade-in" style="padding: 40px; border-radius: 24px; width: 410px; border: 1px solid rgba(236, 72, 153, 0.2);">
-    
+<!-- Glossy Glow Login Screen -->
+<div id="auth-screen" style="position: fixed; inset: 0; background: rgba(5, 7, 10, 0.9); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); color: white; display: flex; justify-content: center; align-items: center; z-index: 9999;">
+  <div class="glass-card fade-in" style="padding: 45px; border-radius: 28px; width: 420px; border: 1px solid rgba(236, 72, 153, 0.25);">
     <div class="text-center mb-6">
-        <div class="flex items-center justify-center gap-3 mb-2">
-            <span class="text-3xl font-black tracking-wider text-pink-600 bg-white/10 px-3 py-1 rounded-xl border border-white/10 shadow-lg">GG</span>
+        <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="text-3xl font-black tracking-wider text-white bg-gradient-to-tr from-pink-600 to-purple-600 px-3.5 py-1.5 rounded-2xl shadow-xl shadow-pink-600/30">GG</span>
         </div>
-        <h2 id="auth-title" style="font-size: 22px; font-weight: 700; color: #f472b6; letter-spacing: -0.5px;">Glossy Glow Login</h2>
-        <p class="text-xs text-slate-400 mt-1">Operational Intelligence Command Center</p>
+        <h2 id="auth-title" style="font-size: 24px; font-weight: 800; color: #f472b6; letter-spacing: -0.5px;">Glossy Glow Portal</h2>
+        <p class="text-xs text-slate-400 mt-1">World-Class Operational Intelligence</p>
     </div>
     
     <div class="space-y-4">
         <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">ইমেইল এড্রেস</label>
-            <input type="email" id="user-email" placeholder="your-email@gmail.com" class="auth-input w-full px-4 py-3 rounded-xl border border-slate-700 bg-[#07090e]/90 text-white text-sm outline-none transition-all duration-300" />
+            <input type="email" id="user-email" placeholder="eom.glossyglow@gmail.com" class="auth-input w-full px-4 py-3 rounded-xl border border-slate-700 bg-[#05070a]/90 text-white text-sm outline-none transition-all duration-300" />
         </div>
-        
         <div>
             <label class="block text-xs font-semibold text-slate-300 mb-1.5 uppercase tracking-wider">পাসওয়ার্ড</label>
-            <input type="password" id="user-password" placeholder="কমপক্ষে ৬ অক্ষর" class="auth-input w-full px-4 py-3 rounded-xl border border-slate-700 bg-[#07090e]/90 text-white text-sm outline-none transition-all duration-300" />
+            <input type="password" id="user-password" placeholder="••••••••" class="auth-input w-full px-4 py-3 rounded-xl border border-slate-700 bg-[#05070a]/90 text-white text-sm outline-none transition-all duration-300" />
         </div>
     </div>
     
-    <button id="auth-btn" onclick="handleAuth()" class="w-full mt-6 py-3.5 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-pink-600/40 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer text-sm tracking-wide">
-        Login করুন
+    <button id="auth-btn" onclick="handleAuth()" class="w-full mt-6 py-3.5 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-pink-600/40 hover:-translate-y-0.5 cursor-pointer text-sm tracking-wide">
+        Secure Login
     </button>
-    
     <p id="auth-error" class="text-red-400 text-xs mt-3 text-center font-medium min-h-[18px]"></p>
     
     <div class="text-center mt-6 pt-4 border-t border-slate-800/80">
       <p class="text-sm text-slate-400">
         <span id="toggle-text">নতুন অ্যাকাউন্ট খুলতে চান?</span> 
-        <a href="#" onclick="toggleAuthMode()" id="toggle-link" class="text-pink-400 hover:text-pink-300 font-bold ml-1 transition-colors">Sign Up করুন</a>
+        <a href="#" onclick="toggleAuthMode()" id="toggle-link" class="text-pink-400 hover:text-pink-300 font-bold ml-1 transition-colors">Sign Up</a>
       </p>
     </div>
   </div>
@@ -144,15 +146,15 @@
 </button>
 
     <!-- Sidebar Navigation -->
-    <aside class="w-72 bg-darkcard/40 backdrop-blur-2xl border-r border-darkborder flex flex-col flex-shrink-0 z-30">
-        <div class="h-20 flex items-center px-6 border-b border-darkborder bg-[#0f172a]/60">
+    <aside class="w-72 bg-darkcard/40 backdrop-blur-2xl border-r border-darkborder flex flex-col flex-shrink-0 z-30 select-none">
+        <div class="h-20 flex items-center px-6 border-b border-darkborder bg-[#0c1322]/60">
             <div class="flex items-center gap-3.5 w-full">
-                <div class="bg-gradient-to-tr from-pink-600 to-purple-600 p-2 rounded-xl flex items-center justify-center shadow-lg shadow-pink-600/30">
+                <div class="bg-gradient-to-tr from-pink-600 to-purple-600 p-2.5 rounded-2xl flex items-center justify-center shadow-lg shadow-pink-600/40 animate-pulse">
                     <span class="text-base font-black tracking-wider text-white">GG</span>
                 </div>
                 <div class="overflow-hidden">
-                    <h1 class="font-bold text-sm tracking-tight text-white truncate">GLOSSY GLOW</h1>
-                    <p class="text-[10px] text-pink-400 font-semibold uppercase tracking-wider">Command Center</p>
+                    <h1 class="font-extrabold text-sm tracking-tight text-white truncate">GLOSSY GLOW</h1>
+                    <p class="text-[10px] text-pink-400 font-bold uppercase tracking-wider">Live Command Center</p>
                 </div>
             </div>
         </div>
@@ -160,15 +162,15 @@
         <!-- Navigation Links -->
         <div class="flex-1 overflow-y-auto px-3 py-4 space-y-6">
             <div>
-                <p class="px-3 text-[10px] font-bold tracking-wider text-slate-500 uppercase mb-2">Main Menu</p>
+                <p class="px-3 text-[10px] font-extrabold tracking-wider text-slate-500 uppercase mb-2">Main Menu</p>
                 <nav class="space-y-1.5">
-                    <a href="#" onclick="switchTab('dashboard', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium bg-gradient-to-r from-pink-600 to-pink-700 text-white shadow-lg shadow-pink-600/30 transition-all duration-300">
+                    <a href="#" onclick="switchTab('dashboard', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white shadow-lg shadow-pink-600/30 transition-all duration-300">
                         <i class="fa-solid fa-house-chimney text-sm"></i>
                         <span class="text-sm">Dashboard</span>
                     </a>
                     
                     <div>
-                        <a href="#" onclick="switchTab('marketing', event, this)" class="menu-item flex items-center justify-between px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                        <a href="#" onclick="switchTab('marketing', event, this)" class="menu-item flex items-center justify-between px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-bullhorn text-sm"></i>
                                 <span class="text-sm">Digital Mktg & Creative</span>
@@ -193,38 +195,38 @@
             </div>
 
             <div>
-                <p class="px-3 text-[10px] font-bold tracking-wider text-slate-500 uppercase mb-2">Operations & Teams</p>
+                <p class="px-3 text-[10px] font-extrabold tracking-wider text-slate-500 uppercase mb-2">Operations & Teams</p>
                 <nav class="space-y-1.5">
-                    <a href="#" onclick="switchTab('customersales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('customersales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-handshake text-sm"></i>
                         <span class="text-sm">Sales & Customer Exp</span>
                     </a>
-                    <a href="#" onclick="switchTab('metasales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('metasales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-chart-line text-sm"></i>
                         <span class="text-sm">Digital Channel (Meta) Sales</span>
                     </a>
-                    <a href="#" onclick="switchTab('websitesales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('websitesales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-globe text-sm"></i>
                         <span class="text-sm">Website Sales</span>
                     </a>
-                    <a href="#" onclick="switchTab('sales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('sales', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-headset text-sm"></i>
                         <span class="text-sm">Tele-Sales Department</span>
                     </a>
 
-                    <a href="#" onclick="switchTab('logistics', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('logistics', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-truck-fast text-sm"></i>
                         <span class="text-sm">Logistic Operation & Complain</span>
                     </a>
-                    <a href="#" onclick="switchTab('inventory', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('inventory', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-warehouse text-sm"></i>
                         <span class="text-sm">Inventory & Stock</span>
                     </a>
-                    <a href="#" onclick="switchTab('finance', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('finance', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-wallet text-sm"></i>
                         <span class="text-sm">Finance & P&L</span>
                     </a>
-                    <a href="#" onclick="switchTab('support', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('support', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-life-ring text-sm"></i>
                         <span class="text-sm">Support & Operation</span>
                     </a>
@@ -232,9 +234,9 @@
             </div>
 
             <div>
-                <p class="px-3 text-[10px] font-bold tracking-wider text-slate-500 uppercase mb-2">Admin & HR</p>
+                <p class="px-3 text-[10px] font-extrabold tracking-wider text-slate-500 uppercase mb-2">Admin & HR</p>
                 <nav class="space-y-1.5">
-                    <a href="#" onclick="switchTab('hr', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
+                    <a href="#" onclick="switchTab('hr', event, this)" class="menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300">
                         <i class="fa-solid fa-users-gear text-sm"></i>
                         <span class="text-sm">Human Resource & Admin</span>
                     </a>
@@ -243,11 +245,11 @@
         </div>
 
         <!-- User profile footer -->
-        <div class="p-4 border-t border-darkborder bg-[#0f172a]/60 flex items-center justify-between">
+        <div class="p-4 border-t border-darkborder bg-[#0c1322]/60 flex items-center justify-between">
             <div class="flex items-center gap-3 overflow-hidden">
-                <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shadow-lg shadow-emerald-500/50"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-ping shadow-lg shadow-emerald-500"></div>
                 <div class="truncate">
-                    <p class="text-xs font-semibold text-slate-200">Uttara Square Store</p>
+                    <p class="text-xs font-bold text-slate-200">Uttara Square Store</p>
                     <p class="text-[10px] text-slate-400">+880 1805-108932</p>
                 </div>
             </div>
@@ -258,8 +260,8 @@
     <div class="flex-1 flex flex-col min-w-0 overflow-hidden bg-darkbg relative z-10">
         <header class="h-20 bg-darkcard/40 backdrop-blur-2xl border-b border-darkborder flex items-center justify-between px-8 flex-shrink-0 z-20">
             <div class="flex items-center gap-4">
-                <h2 id="pageHeaderTitle" class="text-xl font-bold tracking-tight text-white">Operational Intelligence</h2>
-                <span id="currentBadge" class="px-3.5 py-1 rounded-full text-xs font-semibold bg-pink-600/20 text-pink-400 border border-pink-500/30 shadow-sm">Dashboard Overview</span>
+                <h2 id="pageHeaderTitle" class="text-xl font-black tracking-tight text-white">Operational Intelligence</h2>
+                <span id="currentBadge" class="px-3.5 py-1 rounded-full text-xs font-extrabold bg-pink-600/20 text-pink-400 border border-pink-500/30 shadow-md">Dashboard Overview</span>
             </div>
             
             <div class="flex items-center gap-5">
@@ -267,16 +269,16 @@
                     <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
                         <i class="fa-solid fa-magnifying-glass text-xs"></i>
                     </span>
-                    <input type="text" placeholder="Search operational metrics..." class="w-full bg-[#07090e]/80 border border-darkborder rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-pink-500 transition-all shadow-inner">
+                    <input type="text" placeholder="Search live metrics..." class="w-full bg-[#05070a]/80 border border-darkborder rounded-xl pl-10 pr-4 py-2.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-pink-500 transition-all shadow-inner">
                 </div>
 
                 <div class="flex items-center gap-3.5 pl-5 border-l border-darkborder">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-600 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-pink-600/30 text-xs">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-600 to-purple-600 flex items-center justify-center font-black text-white shadow-lg shadow-pink-600/30 text-xs">
                         AT
                     </div>
                     <div>
-                        <p class="text-xs font-bold text-white leading-tight">Atiqur Talukder</p>
-                        <p class="text-[10px] text-pink-400 font-medium">Operations Manager (GG-EMP-012)</p>
+                        <p class="text-xs font-extrabold text-white leading-tight">Atiqur Talukder</p>
+                        <p class="text-[10px] text-pink-400 font-bold">Operations Manager (GG-EMP-012)</p>
                     </div>
                 </div>
             </div>
@@ -284,12 +286,28 @@
 
         <!-- Dynamic Content Body -->
         <main id="mainContentArea" class="flex-1 overflow-y-auto p-8 space-y-6 fade-in">
+            <!-- World-Class Live Ticker Banner -->
+            <div class="glass-card rounded-2xl p-4 flex items-center justify-between flex-wrap gap-4 border border-pink-500/20 shadow-pink-500/5">
+                <div class="flex items-center gap-3">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                    </span>
+                    <p class="text-xs font-bold text-slate-200 tracking-wide">LIVE COMMAND PULSE: <span class="text-pink-400 font-extrabold">Uttara Store & Online Operations Operating at Peak Efficiency</span></p>
+                </div>
+                <div class="flex items-center gap-3 text-xs">
+                    <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-xl font-bold"><i class="fa-solid fa-shield-halved mr-1"></i> SSL / bKash Secure</span>
+                    <span class="bg-pink-500/10 text-pink-400 border border-pink-500/20 px-3 py-1 rounded-xl font-bold"><i class="fa-solid fa-bolt mr-1"></i> Real-time Motion Sync</span>
+                </div>
+            </div>
+
+            <!-- Analytics Grid -->
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
                 <div class="xl:col-span-2 glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between mb-4">
                         <div>
-                            <h3 class="text-base font-bold text-white">DASHBOARD TREND ANALYTICS</h3>
-                            <p class="text-xs text-slate-400">Glossy Glow Uttara Square Store & Online Sales Tracking</p>
+                            <h3 class="text-sm font-extrabold uppercase tracking-wider text-white">DASHBOARD TREND ANALYTICS</h3>
+                            <p class="text-xs text-slate-400">Glossy Glow Uttara Square Store & Online Live Sales Tracking</p>
                         </div>
                         <div class="flex items-center gap-4 text-xs">
                             <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-pink-600 inline-block shadow-md shadow-pink-600/50"></span> Primary (Achieved)</span>
@@ -303,37 +321,38 @@
 
                 <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-base font-bold text-white">DASHBOARDS & ACTIONS</h3>
+                        <h3 class="text-sm font-extrabold uppercase tracking-wider text-white">DASHBOARDS & ACTIONS</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <div class="grid grid-cols-2 gap-4 my-auto">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-4 text-center transition-all hover:border-pink-500/50">
-                            <p class="text-[10px] uppercase font-semibold text-slate-400 mb-1">TOTAL ORDERS</p>
-                            <h4 class="text-xl font-extrabold text-white">8,370</h4>
-                            <span class="text-[10px] text-emerald-400 font-medium"><i class="fa-solid fa-arrow-up"></i> Live Store</span>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-4 text-center transition-all hover:border-pink-500/50">
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">TOTAL ORDERS</p>
+                            <h4 class="text-xl font-black text-white" id="live-orders-count">8,370</h4>
+                            <span class="text-[10px] text-emerald-400 font-extrabold"><i class="fa-solid fa-arrow-up"></i> Live Store</span>
                         </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-4 text-center transition-all hover:border-pink-500/50">
-                            <p class="text-[10px] uppercase font-semibold text-slate-400 mb-1">SUCCESS RATIO</p>
-                            <h4 class="text-xl font-extrabold text-white">94%</h4>
-                            <span class="text-[10px] text-emerald-400 font-medium"><i class="fa-solid fa-check"></i> Optimal</span>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-4 text-center transition-all hover:border-pink-500/50">
+                            <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">SUCCESS RATIO</p>
+                            <h4 class="text-xl font-black text-white">94%</h4>
+                            <span class="text-[10px] text-emerald-400 font-extrabold"><i class="fa-solid fa-check"></i> Optimal</span>
                         </div>
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-darkborder text-xs">
-                        <span class="text-slate-400">Sync status: Live Active</span>
-                        <a href="#" class="text-pink-400 font-semibold hover:underline">Run Diagnostics</a>
+                        <span class="text-slate-400 font-medium">Sync status: <span class="text-emerald-400 font-bold animate-pulse">Live Active</span></span>
+                        <a href="#" class="text-pink-400 font-bold hover:underline">Run Diagnostics</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Bottom Metric Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase">REVENUE</h3>
+                        <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider">REVENUE</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <div>
                         <h4 class="text-2xl font-black text-white mt-2">2,500,000</h4>
-                        <p class="text-xs text-slate-400">Target: <span class="text-pink-400 font-semibold">BDT (Glossy Glow)</span></p>
+                        <p class="text-xs text-slate-400">Target: <span class="text-pink-400 font-bold">BDT (Glossy Glow)</span></p>
                     </div>
                     <div class="h-12 mt-4">
                         <canvas id="revSparkline"></canvas>
@@ -342,17 +361,17 @@
 
                 <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase">KEY PERFORMANCE</h3>
+                        <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider">KEY PERFORMANCE</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <div class="grid grid-cols-2 gap-2 my-3">
                         <div>
-                            <p class="text-[10px] text-slate-400 uppercase font-semibold">REVENUE INDEX</p>
-                            <h4 class="text-lg font-extrabold text-white">1,288</h4>
+                            <p class="text-[10px] text-slate-400 uppercase font-bold">REVENUE INDEX</p>
+                            <h4 class="text-lg font-black text-white">1,288</h4>
                         </div>
                         <div>
-                            <p class="text-[10px] text-slate-400 uppercase font-semibold">ACTIVE STAFF</p>
-                            <h4 class="text-lg font-extrabold text-pink-400">14 Members</h4>
+                            <p class="text-[10px] text-slate-400 uppercase font-bold">ACTIVE STAFF</p>
+                            <h4 class="text-lg font-black text-pink-400">14 Members</h4>
                         </div>
                     </div>
                     <div class="h-12">
@@ -362,13 +381,13 @@
 
                 <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase">USERS</h3>
+                        <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider">USERS</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <div class="h-28 flex items-center justify-center my-2">
                         <canvas id="usersDonut"></canvas>
                     </div>
-                    <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder">
+                    <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder font-medium">
                         <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-pink-500"></span> Sadia (35%)</span>
                         <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-teal-400"></span> Shanta/Mehedi</span>
                     </div>
@@ -376,13 +395,13 @@
 
                 <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                     <div class="flex items-center justify-between">
-                        <h3 class="text-xs font-bold text-slate-400 uppercase">NEW-SECTORS</h3>
+                        <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider">NEW-SECTORS</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <div class="h-28 flex items-center justify-center my-2">
                         <canvas id="sectorsPie"></canvas>
                     </div>
-                    <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder">
+                    <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder font-medium">
                         <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-pink-500"></span> WhatsApp</span>
                         <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Meta Ads</span>
                     </div>
@@ -391,7 +410,7 @@
         </main>
     </div>
 
-    <!-- JavaScript for View Switching and Charts -->
+    <!-- JavaScript for View Switching and Live Dynamic Charts -->
     <script>
         const viewsData = {
             dashboard: `
@@ -399,7 +418,7 @@
                     <div class="xl:col-span-2 glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <h3 class="text-base font-bold text-white">DASHBOARD TREND ANALYTICS</h3>
+                                <h3 class="text-sm font-extrabold uppercase tracking-wider text-white">DASHBOARD TREND ANALYTICS</h3>
                                 <p class="text-xs text-slate-400">Glossy Glow Uttara Square Store & Online Sales Tracking</p>
                             </div>
                         </div>
@@ -407,16 +426,16 @@
                     </div>
                     <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-base font-bold text-white">DASHBOARDS & ACTIONS</h3>
+                            <h3 class="text-sm font-extrabold uppercase tracking-wider text-white">DASHBOARDS & ACTIONS</h3>
                         </div>
                         <div class="grid grid-cols-2 gap-4 my-auto">
-                            <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-4 text-center">
-                                <p class="text-[10px] uppercase font-semibold text-slate-400 mb-1">TOTAL ORDERS</p>
-                                <h4 class="text-xl font-extrabold text-white">8,370</h4>
+                            <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-4 text-center">
+                                <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">TOTAL ORDERS</p>
+                                <h4 class="text-xl font-black text-white">8,370</h4>
                             </div>
-                            <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-4 text-center">
-                                <p class="text-[10px] uppercase font-semibold text-slate-400 mb-1">SUCCESS RATIO</p>
-                                <h4 class="text-xl font-extrabold text-white">94%</h4>
+                            <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-4 text-center">
+                                <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">SUCCESS RATIO</p>
+                                <h4 class="text-xl font-black text-white">94%</h4>
                             </div>
                         </div>
                     </div>
@@ -426,22 +445,22 @@
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <div class="flex items-center justify-between border-b border-darkborder pb-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white">Digital Marketing & Creative Department</h3>
+                            <h3 class="text-lg font-extrabold text-white">Digital Marketing & Creative Department</h3>
                             <p class="text-xs text-slate-400 mt-0.5">Managed by Mr. Sohel Rana (Digital Marketing Manager) — Supervising Production, Creative & Content Teams</p>
                         </div>
-                        <span class="px-3.5 py-1 rounded-lg bg-pink-600/20 text-pink-400 text-xs font-semibold border border-pink-500/30">Manager: GG-EMP-016</span>
+                        <span class="px-3.5 py-1 rounded-lg bg-pink-600/20 text-pink-400 text-xs font-bold border border-pink-500/30">Manager: GG-EMP-016</span>
                     </div>
                 </div>
             `,
             social: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Social Media & Community Engagement</h3>
+                    <h3 class="text-lg font-extrabold text-white">Social Media & Community Engagement</h3>
                     <p class="text-xs text-slate-400">Monitoring customer community feedback, campaign reach, and engagement metrics.</p>
                 </div>
             `,
             seo: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">SEO & Organic Growth Department</h3>
+                    <h3 class="text-lg font-extrabold text-white">SEO & Organic Growth Department</h3>
                     <p class="text-xs text-slate-400">Supervised by Asma-ul-husna (SEO Specialist).</p>
                 </div>
             `,
@@ -449,7 +468,7 @@
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <div class="flex items-center justify-between border-b border-darkborder pb-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-pen-nib text-pink-400 mr-2"></i> Content & Live Updates Hub</h3>
+                            <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-pen-nib text-pink-400 mr-2"></i> Content & Live Updates Hub</h3>
                             <p class="text-xs text-slate-400 mt-1">Select any production or creative team member below to inspect their individual reports and live activities.</p>
                         </div>
                     </div>
@@ -462,8 +481,8 @@
                                         <i class="fa-solid fa-video text-lg"></i>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Cinematographer</span>
-                                        <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Raihan Ahmmed</h4>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Cinematographer</span>
+                                        <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Raihan Ahmmed</h4>
                                         <p class="text-[11px] text-slate-400">GG-EMP-017</p>
                                     </div>
                                 </div>
@@ -475,8 +494,8 @@
                                         <i class="fa-solid fa-film text-lg"></i>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Video Editor</span>
-                                        <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Ahnaf Mahi</h4>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Video Editor</span>
+                                        <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Ahnaf Mahi</h4>
                                         <p class="text-[11px] text-slate-400">GG-EMP-019</p>
                                     </div>
                                 </div>
@@ -493,8 +512,8 @@
                                         <i class="fa-solid fa-user-check text-lg"></i>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Model & Content Creator</span>
-                                        <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Rokeya Akter Rita</h4>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Model & Content Creator</span>
+                                        <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Rokeya Akter Rita</h4>
                                         <p class="text-[11px] text-slate-400">GG-EMP-020</p>
                                     </div>
                                 </div>
@@ -506,8 +525,8 @@
                                         <i class="fa-solid fa-user-check text-lg"></i>
                                     </div>
                                     <div>
-                                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Model & Content Creator</span>
-                                        <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Maimuna</h4>
+                                        <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Model & Content Creator</span>
+                                        <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Maimuna</h4>
                                         <p class="text-[11px] text-slate-400">GG-EMP-021</p>
                                     </div>
                                 </div>
@@ -525,12 +544,12 @@
                                 <i class="fa-solid fa-video text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Cinematographer</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Raihan Ahmmed</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Cinematographer</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Raihan Ahmmed</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-017 &bull; Uttara & Gulshan Studio Shoots</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Content Hub
                         </button>
                     </div>
@@ -544,12 +563,12 @@
                                 <i class="fa-solid fa-film text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Video Editor</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Ahnaf Mahi</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Video Editor</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Ahnaf Mahi</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-019 &bull; Post-Production & Reels Editing</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Content Hub
                         </button>
                     </div>
@@ -563,12 +582,12 @@
                                 <i class="fa-solid fa-user-check text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Model & Content Creator</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Rokeya Akter Rita</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Model & Content Creator</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Rokeya Akter Rita</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-020 &bull; Live Updates & Modeling</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Content Hub
                         </button>
                     </div>
@@ -582,12 +601,12 @@
                                 <i class="fa-solid fa-user-check text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Model & Content Creator</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Maimuna</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Model & Content Creator</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Maimuna</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-021 &bull; Live Updates & Modeling</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('content', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Content Hub
                         </button>
                     </div>
@@ -597,7 +616,7 @@
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <div class="flex items-center justify-between border-b border-darkborder pb-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-headset text-pink-400 mr-2"></i> Sales & Customer Experience Hub</h3>
+                            <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-headset text-pink-400 mr-2"></i> Sales & Customer Experience Hub</h3>
                             <p class="text-xs text-slate-400 mt-1">Select any sales representative below to inspect their live performance, monthly target, and KPI ratings with dynamic ranking.</p>
                         </div>
                     </div>
@@ -606,16 +625,16 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 font-bold">SJ</div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Rank #1 (Leader)</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Sadia Jahan</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Rank #1 (Leader)</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Sadia Jahan</h4>
                                     <p class="text-[11px] text-slate-400">GG-EMP-013</p>
                                 </div>
                             </div>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target Achieved:</span><span class="text-emerald-400 font-bold">110%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Monthly KPI:</span><span class="text-white font-bold">96.5% (Optimal)</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Daily Target Achieved:</span><span class="text-emerald-400 font-bold">110%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Monthly KPI:</span><span class="text-white font-bold">96.5% (Optimal)</span></div>
                             </div>
-                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-pink-400 font-medium">
+                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-pink-400 font-bold">
                                 <span>View Live Report</span>
                                 <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </div>
@@ -624,16 +643,16 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold">SA</div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Rank #2</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-teal-400 transition-colors">Shanta</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Rank #2</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-teal-400 transition-colors">Shanta</h4>
                                     <p class="text-[11px] text-slate-400">GG-EMP-014</p>
                                 </div>
                             </div>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target Achieved:</span><span class="text-teal-400 font-bold">95%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Monthly KPI:</span><span class="text-white font-bold">91.0% (Stable)</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Daily Target Achieved:</span><span class="text-teal-400 font-bold">95%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Monthly KPI:</span><span class="text-white font-bold">91.0% (Stable)</span></div>
                             </div>
-                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-teal-400 font-medium">
+                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-teal-400 font-bold">
                                 <span>View Live Report</span>
                                 <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </div>
@@ -642,16 +661,16 @@
                             <div class="flex items-center gap-3 mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold">MH</div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Rank #3</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-blue-400 transition-colors">Mehedi Hasan</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Rank #3</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-blue-400 transition-colors">Mehedi Hasan</h4>
                                     <p class="text-[11px] text-slate-400">GG-EMP-015</p>
                                 </div>
                             </div>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target Achieved:</span><span class="text-blue-400 font-bold">88%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Monthly KPI:</span><span class="text-white font-bold">87.5% (Growing)</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Daily Target Achieved:</span><span class="text-blue-400 font-bold">88%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Monthly KPI:</span><span class="text-white font-bold">87.5% (Growing)</span></div>
                             </div>
-                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-blue-400 font-medium">
+                            <div class="mt-4 pt-3 border-t border-darkborder flex justify-between items-center text-xs text-blue-400 font-bold">
                                 <span>View Live Report</span>
                                 <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                             </div>
@@ -665,36 +684,36 @@
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 font-bold text-xl">SJ</div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Top Performer &bull; Rank #1</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Sadia Jahan</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Top Performer &bull; Rank #1</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Sadia Jahan</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-013 &bull; Sales & Customer Experience</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Sales Hub
                         </button>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-pink-400"></i> Daily & Monthly Performance</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-pink-400"></i> Daily & Monthly Performance</h4>
                             <div class="space-y-3 text-xs">
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Daily Sales Target (BDT 40,000)</span><span class="text-emerald-400 font-bold">110% (Achieved BDT 44,000)</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Daily Sales Target (BDT 40,000)</span><span class="text-emerald-400 font-bold">110% (Achieved BDT 44,000)</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-pink-600 to-rose-500 h-full w-[110%]"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Monthly Target (BDT 1,200,000)</span><span class="text-pink-400 font-bold">95% Completed</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Monthly Target (BDT 1,200,000)</span><span class="text-pink-400 font-bold">95% Completed</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-pink-600 to-rose-500 h-full w-[95%]"></div></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-pink-400"></i> Key Performance Indicators (KPI)</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-award text-pink-400"></i> Key Performance Indicators (KPI)</h4>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Conversion Rate:</span><span class="text-emerald-400 font-bold">28.4%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.9 / 5.0</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Response Time:</span><span class="text-white font-bold">45 Seconds</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Dynamic Standing:</span><span class="text-pink-400 font-bold animate-pulse">#1 Position (Highlighted)</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Conversion Rate:</span><span class="text-emerald-400 font-bold">28.4%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.9 / 5.0</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Response Time:</span><span class="text-white font-bold">45 Seconds</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Dynamic Standing:</span><span class="text-pink-400 font-bold animate-pulse">#1 Position (Highlighted)</span></div>
                             </div>
                         </div>
                     </div>
@@ -706,36 +725,36 @@
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-xl">SA</div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">High Achiever &bull; Rank #2</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Shanta</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">High Achiever &bull; Rank #2</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Shanta</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-014 &bull; Sales & Customer Experience</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Sales Hub
                         </button>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-teal-400"></i> Daily & Monthly Performance</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-teal-400"></i> Daily & Monthly Performance</h4>
                             <div class="space-y-3 text-xs">
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Daily Sales Target (BDT 35,000)</span><span class="text-teal-400 font-bold">95% (Achieved BDT 33,250)</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Daily Sales Target (BDT 35,000)</span><span class="text-teal-400 font-bold">95% (Achieved BDT 33,250)</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-teal-500 to-emerald-500 h-full w-[95%]"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Monthly Target (BDT 1,000,000)</span><span class="text-teal-400 font-bold">89% Completed</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Monthly Target (BDT 1,000,000)</span><span class="text-teal-400 font-bold">89% Completed</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-teal-500 to-emerald-500 h-full w-[89%]"></div></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-teal-400"></i> Key Performance Indicators (KPI)</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-award text-teal-400"></i> Key Performance Indicators (KPI)</h4>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Conversion Rate:</span><span class="text-teal-400 font-bold">25.1%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.8 / 5.0</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Response Time:</span><span class="text-white font-bold">52 Seconds</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Dynamic Standing:</span><span class="text-teal-400 font-bold">#2 Position</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Conversion Rate:</span><span class="text-teal-400 font-bold">25.1%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.8 / 5.0</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Response Time:</span><span class="text-white font-bold">52 Seconds</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Dynamic Standing:</span><span class="text-teal-400 font-bold">#2 Position</span></div>
                             </div>
                         </div>
                     </div>
@@ -747,36 +766,36 @@
                         <div class="flex items-center gap-4">
                             <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 font-bold text-xl">MH</div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Active Specialist &bull; Rank #3</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Mehedi Hasan</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Active Specialist &bull; Rank #3</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Mehedi Hasan</h3>
                                 <p class="text-xs text-slate-400">Employee ID: GG-EMP-015 &bull; Sales & Customer Experience</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('customersales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Sales Hub
                         </button>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-blue-400"></i> Daily & Monthly Performance</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-blue-400"></i> Daily & Monthly Performance</h4>
                             <div class="space-y-3 text-xs">
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Daily Sales Target (BDT 30,000)</span><span class="text-blue-400 font-bold">88% (Achieved BDT 26,400)</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Daily Sales Target (BDT 30,000)</span><span class="text-blue-400 font-bold">88% (Achieved BDT 26,400)</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-teal-400 h-full w-[88%]"></div></div>
                                 </div>
                                 <div>
-                                    <div class="flex justify-between text-slate-400 mb-1"><span>Monthly Target (BDT 900,000)</span><span class="text-blue-400 font-bold">84% Completed</span></div>
+                                    <div class="flex justify-between text-slate-400 mb-1 font-medium"><span>Monthly Target (BDT 900,000)</span><span class="text-blue-400 font-bold">84% Completed</span></div>
                                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-blue-600 to-teal-400 h-full w-[84%]"></div></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-4">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-blue-400"></i> Key Performance Indicators (KPI)</h4>
+                        <div class="bg-[#05070a]/70 border border-darkborder rounded-xl p-5 space-y-4">
+                            <h4 class="text-sm font-extrabold text-white flex items-center gap-2"><i class="fa-solid fa-award text-blue-400"></i> Key Performance Indicators (KPI)</h4>
                             <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Conversion Rate:</span><span class="text-blue-400 font-bold">22.0%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.7 / 5.0</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Response Time:</span><span class="text-white font-bold">58 Seconds</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Dynamic Standing:</span><span class="text-blue-400 font-bold">#3 Position</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Conversion Rate:</span><span class="text-blue-400 font-bold">22.0%</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Customer Satisfaction:</span><span class="text-white font-bold">4.7 / 5.0</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Response Time:</span><span class="text-white font-bold">58 Seconds</span></div>
+                                <div class="flex justify-between text-slate-400 font-medium"><span>Dynamic Standing:</span><span class="text-blue-400 font-bold">#3 Position</span></div>
                             </div>
                         </div>
                     </div>
@@ -786,7 +805,7 @@
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <div class="flex items-center justify-between border-b border-darkborder pb-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-chart-line text-pink-400 mr-2"></i> Digital Channel (Meta) Sales Hub</h3>
+                            <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-chart-line text-pink-400 mr-2"></i> Digital Channel (Meta) Sales Hub</h3>
                             <p class="text-xs text-slate-400 mt-1">Manage and inspect performance across all social media sales channels with dedicated team members.</p>
                         </div>
                     </div>
@@ -797,8 +816,8 @@
                                     <i class="fa-brands fa-facebook text-xl"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Meta Channel</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Facebook Sales</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Meta Channel</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Facebook Sales</h4>
                                     <p class="text-[11px] text-slate-400">Lead: Sadia Jahan (GG-EMP-013)</p>
                                 </div>
                             </div>
@@ -810,8 +829,8 @@
                                     <i class="fa-brands fa-whatsapp text-xl"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">Direct Messaging</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">WhatsApp Sales</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">Direct Messaging</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">WhatsApp Sales</h4>
                                     <p class="text-[11px] text-slate-400">Lead: Shanta (GG-EMP-014)</p>
                                 </div>
                             </div>
@@ -823,8 +842,8 @@
                                     <i class="fa-brands fa-instagram text-xl"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Visual Social</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Instagram Sales</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Visual Social</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Instagram Sales</h4>
                                     <p class="text-[11px] text-slate-400">Lead: Mehedi Hasan (GG-EMP-015)</p>
                                 </div>
                             </div>
@@ -836,8 +855,8 @@
                                     <i class="fa-brands fa-tiktok text-xl"></i>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Video Commerce</span>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Tiktok Sales</h4>
+                                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Video Commerce</span>
+                                    <h4 class="text-sm font-extrabold text-white mt-1 group-hover:text-pink-400 transition-colors">Tiktok Sales</h4>
                                     <p class="text-[11px] text-slate-400">Live Commerce & Orders Team</p>
                                 </div>
                             </div>
@@ -854,31 +873,9 @@
                                 <i class="fa-solid fa-globe text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">E-commerce Gateway</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Website Sales Channel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">E-commerce Gateway</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Website Sales Channel</h3>
                                 <p class="text-xs text-slate-400">Direct online store orders, payment gateways, and automated cart tracking</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-cart-shopping text-teal-400"></i> Store Performance</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Daily Website Orders</span>
-                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">145 Orders</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Online Conversion Rate</span>
-                                    <span class="text-[10px] text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded font-medium">3.4%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-teal-400"></i> Gateway Status</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>SSLCommerz / bKash Gateway:</span><span class="text-emerald-400 font-bold">Active & Stable</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Monthly Web Revenue:</span><span class="text-white font-bold">BDT 850,000</span></div>
                             </div>
                         </div>
                     </div>
@@ -892,31 +889,9 @@
                                 <i class="fa-solid fa-headset text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">Outbound & Inbound</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Tele-Sales Department</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-orange-500/10 text-orange-400 border border-orange-500/20">Outbound & Inbound</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Tele-Sales Department</h3>
                                 <p class="text-xs text-slate-400">Direct phone call sales, customer inquiry follow-ups, and order confirmations</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-phone text-orange-400"></i> Call Metrics</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Calls Made Today</span>
-                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">320 Calls</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Successful Confirmations</span>
-                                    <span class="text-[10px] text-orange-400 bg-orange-500/10 px-2 py-0.5 rounded font-medium">85 Orders</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-orange-400"></i> Performance Index</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target Achievement:</span><span class="text-emerald-400 font-bold">92%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Average Call Duration:</span><span class="text-white font-bold">3.2 Mins</span></div>
                             </div>
                         </div>
                     </div>
@@ -930,31 +905,14 @@
                                 <i class="fa-brands fa-facebook text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Meta Channel Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Facebook Sales Channel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Meta Channel Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Facebook Sales Channel</h3>
                                 <p class="text-xs text-slate-400">Assigned Member: Sadia Jahan (Employee ID: GG-EMP-013)</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Meta Sales
                         </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-blue-400"></i> Daily Performance & Target</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target:</span><span class="text-white font-bold">BDT 40,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Achieved Today:</span><span class="text-emerald-400 font-bold">BDT 44,000 (110%)</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Messenger Conversions:</span><span class="text-white font-bold">42 Orders</span></div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-blue-400"></i> Monthly KPI</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Monthly Target:</span><span class="text-white font-bold">BDT 1,200,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>KPI Rating:</span><span class="text-emerald-400 font-bold">96.5% (Optimal)</span></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             `,
@@ -966,31 +924,14 @@
                                 <i class="fa-brands fa-whatsapp text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">Direct Messaging Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">WhatsApp Sales Channel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">Direct Messaging Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">WhatsApp Sales Channel</h3>
                                 <p class="text-xs text-slate-400">Assigned Member: Shanta (Employee ID: GG-EMP-014)</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Meta Sales
                         </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-green-400"></i> Daily Performance & Target</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target:</span><span class="text-white font-bold">BDT 35,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Achieved Today:</span><span class="text-teal-400 font-bold">BDT 33,250 (95%)</span></div>
-                                <div class="flex justify-between text-slate-400"><span>WhatsApp Orders:</span><span class="text-white font-bold">34 Orders</span></div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-green-400"></i> Monthly KPI</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Monthly Target:</span><span class="text-white font-bold">BDT 1,000,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>KPI Rating:</span><span class="text-teal-400 font-bold">91.0% (Stable)</span></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             `,
@@ -1002,31 +943,14 @@
                                 <i class="fa-brands fa-instagram text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Social Sales Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Instagram Sales Channel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-pink-500/10 text-pink-400 border border-pink-500/20">Social Sales Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Instagram Sales Channel</h3>
                                 <p class="text-xs text-slate-400">Assigned Member: Mehedi Hasan (Employee ID: GG-EMP-015)</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Meta Sales
                         </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-pink-400"></i> Daily Performance & Target</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target:</span><span class="text-white font-bold">BDT 30,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Achieved Today:</span><span class="text-blue-400 font-bold">BDT 26,400 (88%)</span></div>
-                                <div class="flex justify-between text-slate-400"><span>DM Conversions:</span><span class="text-white font-bold">28 Orders</span></div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-pink-400"></i> Monthly KPI</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Monthly Target:</span><span class="text-white font-bold">BDT 900,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>KPI Rating:</span><span class="text-blue-400 font-bold">87.5% (Growing)</span></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             `,
@@ -1038,31 +962,14 @@
                                 <i class="fa-brands fa-tiktok text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Live Video Commerce</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Tiktok Sales Channel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Live Video Commerce</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Tiktok Sales Channel</h3>
                                 <p class="text-xs text-slate-400">Assigned Team: Live Streaming & Video Commerce Unit</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('metasales', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Meta Sales
                         </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-line text-cyan-400"></i> Daily Performance & Target</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Daily Target:</span><span class="text-white font-bold">BDT 25,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Achieved Today:</span><span class="text-emerald-400 font-bold">BDT 27,500 (110%)</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Live Orders:</span><span class="text-white font-bold">30 Orders</span></div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-award text-cyan-400"></i> Monthly KPI</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Monthly Target:</span><span class="text-white font-bold">BDT 750,000</span></div>
-                                <div class="flex justify-between text-slate-400"><span>KPI Rating:</span><span class="text-emerald-400 font-bold">94.0% (Optimal)</span></div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             `,
@@ -1070,66 +977,66 @@
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <div class="flex items-center justify-between border-b border-darkborder pb-4">
                         <div>
-                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-truck-fast text-orange-400 mr-2"></i> Logistic Operation & Complain Management Hub</h3>
+                            <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-truck-fast text-orange-400 mr-2"></i> Logistic Operation & Complain Management Hub</h3>
                             <p class="text-xs text-slate-400 mt-1">Select any logistics or complaint category below to view specific parcel reports and status logs.</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                        <div onclick="switchTab('transit_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-blue-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-3 group-hover:bg-blue-500/20">
+                        <div onclick="switchTab('transit_parcel', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-blue-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-3 group-hover:bg-blue-500/20">
                                 <i class="fa-solid fa-shipping-fast text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">In Transit Parcel List</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-blue-400 transition-colors">In Transit Parcel List</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Track active dispatch and on-the-way parcels.</p>
-                            <span class="text-[10px] text-blue-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-blue-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('hold_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-amber-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-3 group-hover:bg-amber-500/20">
+                        <div onclick="switchTab('hold_parcel', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-amber-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-3 group-hover:bg-amber-500/20">
                                 <i class="fa-solid fa-box-archive text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Parcel In hold</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-amber-400 transition-colors">Parcel In hold</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Review parcels currently held at hubs or courier points.</p>
-                            <span class="text-[10px] text-amber-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-amber-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('rider_call', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-teal-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 mb-3 group-hover:bg-teal-500/20">
+                        <div onclick="switchTab('rider_call', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-teal-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 mb-3 group-hover:bg-teal-500/20">
                                 <i class="fa-solid fa-phone-volume text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors">Rider Call Attempt</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-teal-400 transition-colors">Rider Call Attempt</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Monitor delivery rider call logs and customer responses.</p>
-                            <span class="text-[10px] text-teal-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-teal-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('mistake_report', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-red-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 mb-3 group-hover:bg-red-500/20">
+                        <div onclick="switchTab('mistake_report', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-red-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center text-red-400 mb-3 group-hover:bg-red-500/20">
                                 <i class="fa-solid fa-triangle-exclamation text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-red-400 transition-colors">Mistake Report</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-red-400 transition-colors">Mistake Report</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Address dispatch errors, wrong items, or address mismatches.</p>
-                            <span class="text-[10px] text-red-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-red-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('lost_damage', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-rose-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 mb-3 group-hover:bg-rose-500/20">
+                        <div onclick="switchTab('lost_damage', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-rose-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-3 group-hover:bg-rose-500/20">
                                 <i class="fa-solid fa-box-open text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">Lost and Damage parcel</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-rose-400 transition-colors">Lost and Damage parcel</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Check compensation claims, missing items, and transit damages.</p>
-                            <span class="text-[10px] text-rose-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-rose-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('cod_issue', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-emerald-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3 group-hover:bg-emerald-500/20">
+                        <div onclick="switchTab('cod_issue', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-emerald-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3 group-hover:bg-emerald-500/20">
                                 <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">COD Update Issue</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-emerald-400 transition-colors">COD Update Issue</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Resolve cash-on-delivery collection and ledger syncing issues.</p>
-                            <span class="text-[10px] text-emerald-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-emerald-400 font-bold">View Report &rarr;</span>
                         </div>
-                        <div onclick="switchTab('return_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-purple-500/50 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3 group-hover:bg-purple-500/20">
+                        <div onclick="switchTab('return_parcel', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-purple-500/50 transition-all flex flex-col justify-between group">
+                            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3 group-hover:bg-purple-500/20">
                                 <i class="fa-solid fa-rotate-left text-sm"></i>
                             </div>
-                            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">Return Parcel</h4>
+                            <h4 class="text-sm font-extrabold text-white group-hover:text-purple-400 transition-colors">Return Parcel</h4>
                             <p class="text-[11px] text-slate-400 mb-2">Manage customer returns, courier re-attempts, and stock restock.</p>
-                            <span class="text-[10px] text-purple-400 font-medium">View Report &rarr;</span>
+                            <span class="text-[10px] text-purple-400 font-bold">View Report &rarr;</span>
                         </div>
                     </div>
                 </div>
@@ -1142,12 +1049,12 @@
                                 <i class="fa-solid fa-shipping-fast text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">In Transit Parcel List</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">In Transit Parcel List</h3>
                                 <p class="text-xs text-slate-400">Active parcels currently in transit with courier partners</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1161,12 +1068,12 @@
                                 <i class="fa-solid fa-box-archive text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Parcel In hold</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Parcel In hold</h3>
                                 <p class="text-xs text-slate-400">Parcels temporarily put on hold due to customer request or verification</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1180,12 +1087,12 @@
                                 <i class="fa-solid fa-phone-volume text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Rider Call Attempt</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Rider Call Attempt</h3>
                                 <p class="text-xs text-slate-400">Rider communication logs, unanswered calls, and follow-up status</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1199,12 +1106,12 @@
                                 <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Complain Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Mistake Report</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Complain Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Mistake Report</h3>
                                 <p class="text-xs text-slate-400">Packaging mistakes, incorrect items sent, or wrong quantity complaints</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1218,12 +1125,12 @@
                                 <i class="fa-solid fa-box-open text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Complain Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Lost and Damage parcel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Complain Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Lost and Damage parcel</h3>
                                 <p class="text-xs text-slate-400">Courier transit damages, broken glassware/bottles, and lost parcel claims</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1237,12 +1144,12 @@
                                 <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Finance & Logistics</span>
-                                <h3 class="text-lg font-bold text-white mt-1">COD Update Issue</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Finance & Logistics</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">COD Update Issue</h3>
                                 <p class="text-xs text-slate-400">Cash-on-delivery payment mismatch, delayed courier payout, and ledger updates</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1256,12 +1163,12 @@
                                 <i class="fa-solid fa-rotate-left text-2xl"></i>
                             </div>
                             <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Return Parcel</h3>
+                                <span class="text-xs font-bold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-extrabold text-white mt-1">Return Parcel</h3>
                                 <p class="text-xs text-slate-400">RTS (Return to Sender) parcels, customer exchanges, and restock processing</p>
                             </div>
                         </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-darkborder transition">
                             <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
                         </button>
                     </div>
@@ -1269,22 +1176,22 @@
             `,
             inventory: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Inventory & Stock</h3>
+                    <h3 class="text-lg font-extrabold text-white">Inventory & Stock</h3>
                 </div>
             `,
             finance: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Finance & P&L</h3>
+                    <h3 class="text-lg font-extrabold text-white">Finance & P&L</h3>
                 </div>
             `,
             support: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Support & Operation</h3>
+                    <h3 class="text-lg font-extrabold text-white">Support & Operation</h3>
                 </div>
             `,
             hr: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Human Resource & Administration</h3>
+                    <h3 class="text-lg font-extrabold text-white">Human Resource & Administration</h3>
                 </div>
             `
         };
@@ -1294,13 +1201,13 @@
             
             document.querySelectorAll('.menu-item, .menu-item-sub').forEach(item => {
                 item.className = item.classList.contains('menu-item-sub') 
-                    ? "menu-item-sub flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/40 transition-all"
-                    : "menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300";
+                    ? "menu-item-sub flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/40 transition-all text-xs font-medium"
+                    : "menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all duration-300 text-sm";
             });
             if (element && element.classList && element.classList.contains('menu-item-sub')) {
-                element.className = "menu-item-sub flex items-center gap-2.5 px-3 py-2 rounded-lg bg-pink-600/20 text-pink-400 font-semibold transition-all";
+                element.className = "menu-item-sub flex items-center gap-2.5 px-3 py-2 rounded-lg bg-pink-600/20 text-pink-400 font-bold transition-all text-xs";
             } else if (element && element.classList && element.classList.contains('menu-item')) {
-                element.className = "menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-medium bg-gradient-to-r from-pink-600 to-pink-700 text-white shadow-lg shadow-pink-600/30 transition-all duration-300";
+                element.className = "menu-item flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl font-semibold bg-gradient-to-r from-pink-600 to-pink-700 text-white shadow-lg shadow-pink-600/30 transition-all duration-300 text-sm";
             }
 
             const titles = {
@@ -1360,7 +1267,7 @@
 
             document.getElementById('pageHeaderTitle').innerText = titles[tabKey] || "Operational Intelligence";
             document.getElementById('currentBadge').innerText = badges[tabKey] || "Hub";
-            document.getElementById('mainContentArea').innerHTML = viewsData[tabKey] || `<div class="glass-card rounded-2xl p-6 shadow-2xl"><h3 class="text-lg font-bold text-white">Module Active</h3></div>`;
+            document.getElementById('mainContentArea').innerHTML = viewsData[tabKey] || `<div class="glass-card rounded-2xl p-6 shadow-2xl"><h3 class="text-lg font-black text-white">Module Active</h3></div>`;
 
             if (tabKey === 'dashboard') {
                 initDashboardCharts();
@@ -1494,6 +1401,17 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             initDashboardCharts();
+            // Simulate live dynamic order increments
+            setInterval(() => {
+                const countEl = document.getElementById('live-orders-count');
+                if(countEl) {
+                    let current = parseInt(countEl.innerText.replace(',', ''));
+                    if(Math.random() > 0.6) {
+                        current += 1;
+                        countEl.innerText = current.toLocaleString();
+                    }
+                }
+            }, 3000);
         });
     </script>
 
@@ -1523,9 +1441,9 @@
         window.toggleAuthMode = function() {
             isSignup = !isSignup;
             document.getElementById('auth-title').innerText = isSignup ? "Create New Account" : "Glossy Glow Login";
-            document.getElementById('auth-btn').innerText = isSignup ? "Sign Up" : "Login";
-            document.getElementById('toggle-text').innerText = isSignup ? "Already have an account?" : "Don't have an account?";
-            document.getElementById('toggle-link').innerText = isSignup ? "Sign Up" : "Login";
+            document.getElementById('auth-btn').innerText = isSignup ? "Sign Up" : "Secure Login";
+            document.getElementById('toggle-text').innerText = isSignup ? "Already have an account?" : "নতুন অ্যাকাউন্ট খুলতে চান?";
+            document.getElementById('toggle-link').innerText = isSignup ? "Login" : "Sign Up";
             document.getElementById('auth-error').innerText = "";
         };
 
