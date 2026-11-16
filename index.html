@@ -322,7 +322,7 @@
                             <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-teal-400 inline-block shadow-md shadow-teal-400/50"></span> Secondary (Target)</span>
                         </div>
                     </div>
-                    <div class="h-72 w-full relative">
+                    <div class="h-72 w-full">
                         <canvas id="trendChart"></canvas>
                     </div>
                 </div>
@@ -361,7 +361,7 @@
                         <h4 class="text-2xl font-black text-white mt-2">2,500,000</h4>
                         <p class="text-xs text-slate-400">Target: <span class="text-pink-400 font-semibold">BDT (Glossy Glow)</span></p>
                     </div>
-                    <div class="h-12 mt-4 relative">
+                    <div class="h-12 mt-4">
                         <canvas id="revSparkline"></canvas>
                     </div>
                 </div>
@@ -381,7 +381,7 @@
                             <h4 class="text-lg font-extrabold text-pink-400">14 Members</h4>
                         </div>
                     </div>
-                    <div class="h-12 relative">
+                    <div class="h-12">
                         <canvas id="kpiBarChart"></canvas>
                     </div>
                 </div>
@@ -391,7 +391,7 @@
                         <h3 class="text-xs font-bold text-slate-400 uppercase">USERS</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
-                    <div class="h-28 flex items-center justify-center my-2 relative">
+                    <div class="h-28 flex items-center justify-center my-2">
                         <canvas id="usersDonut"></canvas>
                     </div>
                     <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder">
@@ -405,7 +405,7 @@
                         <h3 class="text-xs font-bold text-slate-400 uppercase">NEW-SECTORS</h3>
                         <button class="text-slate-400 hover:text-white"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
-                    <div class="h-28 flex items-center justify-center my-2 relative">
+                    <div class="h-28 flex items-center justify-center my-2">
                         <canvas id="sectorsPie"></canvas>
                     </div>
                     <div class="flex items-center justify-around text-[11px] text-slate-400 pt-2 border-t border-darkborder">
@@ -429,7 +429,7 @@
                                 <p class="text-xs text-slate-400">Glossy Glow Uttara Square Store & Online Sales Tracking</p>
                             </div>
                         </div>
-                        <div class="h-72 w-full relative"><canvas id="trendChart"></canvas></div>
+                        <div class="h-72 w-full"><canvas id="trendChart"></canvas></div>
                     </div>
                     <div class="glass-card rounded-2xl p-6 shadow-2xl flex flex-col justify-between">
                         <div class="flex items-center justify-between mb-4">
@@ -477,399 +477,24 @@
                     <p class="text-xs text-slate-400 mt-1">Select any production or creative team member below to inspect their individual reports and live activities.</p>
                 </div>
             `,
-            logistics: `
+            raihan_activity: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-truck-fast text-pink-400 mr-2"></i> Logistic Operation & Complain Management</h3>
-                            <p class="text-xs text-slate-400 mt-1">Parcel dispatch, courier handovers, and customer return/complain resolution.</p>
-                        </div>
-                    </div>
-
-                    <!-- Logistics Categories Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
-                        <!-- In Transit Parcel List -->
-                        <div onclick="switchTab('log_transit', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-blue-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                    <i class="fa-solid fa-shipping-fast text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">In Transit Parcel List</h4>
-                                    <p class="text-[11px] text-slate-400">Active shipments en route</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- Parcel In hold -->
-                        <div onclick="switchTab('log_hold', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-amber-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                                    <i class="fa-solid fa-pause-circle text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Parcel In hold</h4>
-                                    <p class="text-[11px] text-slate-400">On-hold & pending status</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- Rider Call Attempt -->
-                        <div onclick="switchTab('log_rider', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-teal-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-                                    <i class="fa-solid fa-phone-volume text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Rider Call Attempt</h4>
-                                    <p class="text-[11px] text-slate-400">Delivery verification logs</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- Mistake Report -->
-                        <div onclick="switchTab('log_mistake', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-red-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
-                                    <i class="fa-solid fa-triangle-exclamation text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Mistake Report</h4>
-                                    <p class="text-[11px] text-slate-400">Discrepancy & error records</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- Lost and Damage parcel -->
-                        <div onclick="switchTab('log_damage', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-rose-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
-                                    <i class="fa-solid fa-box-open text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Lost & Damage Parcel</h4>
-                                    <p class="text-[11px] text-slate-400">Claim & damage tracking</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- COD Update Issue -->
-                        <div onclick="switchTab('log_cod', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-emerald-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                                    <i class="fa-solid fa-money-bill-transfer text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">COD Update Issue</h4>
-                                    <p class="text-[11px] text-slate-400">Cash collection & reconciliation</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-
-                        <!-- Return Parcel -->
-                        <div onclick="switchTab('log_return', event, this)" class="glass-card p-5 rounded-xl cursor-pointer hover:border-purple-500/50 transition-all flex items-center justify-between group">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-                                    <i class="fa-solid fa-rotate-left text-lg"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-bold text-white mt-1 group-hover:text-pink-400 transition-colors">Return Parcel</h4>
-                                    <p class="text-[11px] text-slate-400">Customer returns & reverse logistics</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-arrow-right text-slate-500 group-hover:text-pink-400 group-hover:translate-x-1 transition-all"></i>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Raihan Ahmmed - Activity & Report</h3>
                 </div>
             `,
-            log_transit: `
+            ahnaf_activity: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                                <i class="fa-solid fa-shipping-fast text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">In Transit Parcel List</h3>
-                                <p class="text-xs text-slate-400">Active shipments currently on the way to customers.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-blue-400"></i> Status Overview</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Total Parcels In Transit</span>
-                                    <span class="text-white font-bold">1,420 Items</span>
-                                </div>
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>On-Time Delivery Rate</span>
-                                    <span class="text-emerald-400 font-bold">96.5%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-blue-400"></i> Courier Breakdown</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Steadfast / Pathao:</span><span class="text-white font-bold">65%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>RedX / Paperfly:</span><span class="text-white font-bold">35%</span></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Ahnaf Mahi - Activity & Report</h3>
                 </div>
             `,
-            log_hold: `
+            rita_activity: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
-                                <i class="fa-solid fa-pause-circle text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Parcel In Hold</h3>
-                                <p class="text-xs text-slate-400">Shipments paused due to customer request or address verification.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-amber-400"></i> Hold Summary</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Total Held Parcels</span>
-                                    <span class="text-amber-400 font-bold">84 Items</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-amber-400"></i> Reasons</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Customer requested later date:</span><span class="text-white font-bold">52%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Incorrect phone/address:</span><span class="text-white font-bold">48%</span></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-lg font-bold text-white">Rokeya Akter Rita - Activity & Report</h3>
                 </div>
             `,
-            log_rider: `
+            maimuna_activity: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
-                                <i class="fa-solid fa-phone-volume text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Rider Call Attempt</h3>
-                                <p class="text-xs text-slate-400">Rider communication and delivery attempt verification records.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-teal-400"></i> Attempt Logs</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Total Calls Made Today</span>
-                                    <span class="text-white font-bold">310 Calls</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-teal-400"></i> Success Metrics</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Connected & Confirmed:</span><span class="text-emerald-400 font-bold">88%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Unreachable / No Answer:</span><span class="text-amber-400 font-bold">12%</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `,
-            log_mistake: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
-                                <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Complain Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Mistake Report</h3>
-                                <p class="text-xs text-slate-400">Wrong item dispatched, quantity mismatch, or addressing errors.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-red-400"></i> Error Tracking</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Reported Mistakes This Week</span>
-                                    <span class="text-red-400 font-bold">12 Cases</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-red-400"></i> Resolution Status</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Resolved & Exchanged:</span><span class="text-emerald-400 font-bold">10 Cases</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Pending Review:</span><span class="text-amber-400 font-bold">2 Cases</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `,
-            log_damage: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
-                                <i class="fa-solid fa-box-open text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Complain Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Lost & Damage Parcel</h3>
-                                <p class="text-xs text-slate-400">Courier transit damage claims and lost item investigations.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-rose-400"></i> Claim Summary</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Total Claims Filed</span>
-                                    <span class="text-rose-400 font-bold">5 Cases</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-rose-400"></i> Claim Status</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Refunded by Courier:</span><span class="text-emerald-400 font-bold">3 Cases</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Under Investigation:</span><span class="text-amber-400 font-bold">2 Cases</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `,
-            log_cod: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                                <i class="fa-solid fa-money-bill-transfer text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Finance & Logistics</span>
-                                <h3 class="text-lg font-bold text-white mt-1">COD Update Issue</h3>
-                                <p class="text-xs text-slate-400">Cash-on-delivery payment reconciliation and mismatch tracking.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-emerald-400"></i> COD Status</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Pending COD Discrepancies</span>
-                                    <span class="text-amber-400 font-bold">BDT 14,500</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-emerald-400"></i> Reconciliation</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Matched & Settled:</span><span class="text-emerald-400 font-bold">98.2%</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Disputed with Courier:</span><span class="text-red-400 font-bold">1.8%</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `,
-            log_return: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
-                                <i class="fa-solid fa-rotate-left text-2xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Logistics Report</span>
-                                <h3 class="text-lg font-bold text-white mt-1">Return Parcel</h3>
-                                <p class="text-xs text-slate-400">Customer returns, exchange processing, and warehouse restocking.</p>
-                            </div>
-                        </div>
-                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
-                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics
-                        </button>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-activity text-purple-400"></i> Return Summary</h4>
-                            <div class="space-y-2 text-xs text-slate-300">
-                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
-                                    <span>Total Returns Received</span>
-                                    <span class="text-purple-400 font-bold">185 Parcels</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
-                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-purple-400"></i> Restock Status</h4>
-                            <div class="space-y-2 text-xs">
-                                <div class="flex justify-between text-slate-400"><span>Restocked to Inventory:</span><span class="text-emerald-400 font-bold">142 Items</span></div>
-                                <div class="flex justify-between text-slate-400"><span>Quality Check Pending:</span><span class="text-amber-400 font-bold">43 Items</span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `,
-            marketing: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Digital Marketing & Creative Department</h3>
-                    <p class="text-xs text-slate-400">Managed by Mr. Sohel Rana (Digital Marketing Manager).</p>
-                </div>
-            `,
-            social: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Social Media & Community Engagement</h3>
-                </div>
-            `,
-            seo: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">SEO & Organic Growth Department</h3>
-                </div>
-            `,
-            content: `
-                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
-                    <h3 class="text-lg font-bold text-white">Content & Live Updates Hub</h3>
+                    <h3 class="text-lg font-bold text-white">Maimuna - Activity & Report</h3>
                 </div>
             `,
             customersales: `
@@ -910,6 +535,362 @@
             websitesales: `
                 <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
                     <h3 class="text-lg font-bold text-white">Website Sales Channel</h3>
+                </div>
+            `,
+            // Logistic Operation & Complain Management Hub & Sub-Views
+            logistics: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-white"><i class="fa-solid fa-truck-fast text-orange-400 mr-2"></i> Logistic Operation & Complain Management Hub</h3>
+                            <p class="text-xs text-slate-400 mt-1">Select any logistics or complaint category below to view specific parcel reports and status logs.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                        <div onclick="switchTab('transit_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-blue-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 mb-3 group-hover:bg-blue-500/20">
+                                <i class="fa-solid fa-shipping-fast text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-blue-400 transition-colors">In Transit Parcel List</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Track active dispatch and on-the-way parcels.</p>
+                            <span class="text-[10px] text-blue-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('hold_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-amber-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 mb-3 group-hover:bg-amber-500/20">
+                                <i class="fa-solid fa-box-archive text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-amber-400 transition-colors">Parcel In hold</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Review parcels currently held at hubs or courier points.</p>
+                            <span class="text-[10px] text-amber-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('rider_call', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-teal-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 mb-3 group-hover:bg-teal-500/20">
+                                <i class="fa-solid fa-phone-volume text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-teal-400 transition-colors">Rider Call Attempt</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Monitor delivery rider call logs and customer responses.</p>
+                            <span class="text-[10px] text-teal-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('mistake_report', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-red-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-400 mb-3 group-hover:bg-red-500/20">
+                                <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-red-400 transition-colors">Mistake Report</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Address dispatch errors, wrong items, or address mismatches.</p>
+                            <span class="text-[10px] text-red-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('lost_damage', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-rose-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 mb-3 group-hover:bg-rose-500/20">
+                                <i class="fa-solid fa-box-open text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-rose-400 transition-colors">Lost and Damage parcel</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Check compensation claims, missing items, and transit damages.</p>
+                            <span class="text-[10px] text-rose-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('cod_issue', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-emerald-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-3 group-hover:bg-emerald-500/20">
+                                <i class="fa-solid fa-file-invoice-dollar text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">COD Update Issue</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Resolve cash-on-delivery collection and ledger syncing issues.</p>
+                            <span class="text-[10px] text-emerald-400 font-medium">View Report &rarr;</span>
+                        </div>
+                        <div onclick="switchTab('return_parcel', event, this)" class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 hover:border-purple-500/50 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 mb-3 group-hover:bg-purple-500/20">
+                                <i class="fa-solid fa-rotate-left text-sm"></i>
+                            </div>
+                            <h4 class="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">Return Parcel</h4>
+                            <p class="text-[11px] text-slate-400 mb-2">Manage customer returns, courier re-attempts, and stock restock.</p>
+                            <span class="text-[10px] text-purple-400 font-medium">View Report &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            `,
+            transit_parcel: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                                <i class="fa-solid fa-shipping-fast text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">In Transit Parcel List</h3>
+                                <p class="text-xs text-slate-400">Active parcels currently in transit with courier partners (Steadfast, Pathao, RedX)</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-blue-400"></i> Active Status Summary</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Out for Delivery Today</span>
+                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">420 Parcels</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Hub Transfer in Progress</span>
+                                    <span class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded font-medium">185 Parcels</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-blue-400"></i> Delivery Performance</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>On-Time Transit Rate:</span><span class="text-emerald-400 font-bold">96.5%</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Average Transit Time:</span><span class="text-white font-bold">1.8 Days</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            hold_parcel: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-box-archive text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Parcel In hold</h3>
+                                <p class="text-xs text-slate-400">Parcels temporarily put on hold due to customer request or address verification</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-amber-400"></i> Hold Breakdown</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Customer Requested Hold (Reschedule)</span>
+                                    <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-medium">32 Parcels</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Address Clarification Needed</span>
+                                    <span class="text-[10px] text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-medium">14 Parcels</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-amber-400"></i> Resolution Status</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>Pending Action:</span><span class="text-amber-400 font-bold">46 Parcels</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Avg Hold Duration:</span><span class="text-white font-bold">1.2 Days</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            rider_call: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400">
+                                <i class="fa-solid fa-phone-volume text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-teal-500/10 text-teal-400 border border-teal-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Rider Call Attempt</h3>
+                                <p class="text-xs text-slate-400">Rider communication logs, unanswered calls, and follow-up status</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-teal-400"></i> Call Summary</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Successful Reach on 1st Attempt</span>
+                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">88%</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Phone Unreachable / Switched Off</span>
+                                    <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-medium">35 Calls</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-teal-400"></i> Efficiency Metric</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>Total Call Attempts Today:</span><span class="text-white font-bold">540 Calls</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Follow-up Required:</span><span class="text-amber-400 font-bold">28 Cases</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            mistake_report: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                                <i class="fa-solid fa-triangle-exclamation text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">Complain Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Mistake Report</h3>
+                                <p class="text-xs text-slate-400">Packaging mistakes, incorrect items sent, or wrong quantity complaints</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-red-400"></i> Complain Types</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Wrong Shade / Product Delivered</span>
+                                    <span class="text-[10px] text-red-400 bg-red-500/10 px-2 py-0.5 rounded font-medium">5 Cases</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Missing Free Gift / Item</span>
+                                    <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-medium">3 Cases</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-red-400"></i> Accuracy Index</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>Packing Accuracy:</span><span class="text-emerald-400 font-bold">99.4%</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Resolved Mistakes:</span><span class="text-white font-bold">8 / 8 Cases</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            lost_damage: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                                <i class="fa-solid fa-box-open text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">Complain Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Lost and Damage parcel</h3>
+                                <p class="text-xs text-slate-400">Courier transit damages, broken glassware/bottles, and lost parcel claims</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-rose-400"></i> Claims Summary</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Transit Damage (Leakage/Breakage)</span>
+                                    <span class="text-[10px] text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded font-medium">4 Claims</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Lost by Courier Partner</span>
+                                    <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-medium">1 Claim</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-rose-400"></i> Claim Compensation</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>Claim Recovery Rate:</span><span class="text-emerald-400 font-bold">100% (Settled)</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Total Loss Value:</span><span class="text-white font-bold">BDT 4,500</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            cod_issue: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-file-invoice-dollar text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Finance & Logistics</span>
+                                <h3 class="text-lg font-bold text-white mt-1">COD Update Issue</h3>
+                                <p class="text-xs text-slate-400">Cash-on-delivery payment mismatch, delayed courier payout, and ledger updates</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-emerald-400"></i> Issue Tracking</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Delayed Payout Verification</span>
+                                    <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-medium">3 Orders</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Partial COD Collection Discrepancy</span>
+                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">Resolved</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-emerald-400"></i> Payout Health</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>COD Cleared This Week:</span><span class="text-emerald-400 font-bold">BDT 385,000</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Dispute Rate:</span><span class="text-white font-bold">0.1%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            return_parcel: `
+                <div class="glass-card rounded-2xl p-6 shadow-2xl space-y-6 fade-in">
+                    <div class="flex items-center justify-between border-b border-darkborder pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                                <i class="fa-solid fa-rotate-left text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Logistics Report</span>
+                                <h3 class="text-lg font-bold text-white mt-1">Return Parcel</h3>
+                                <p class="text-xs text-slate-400">RTS (Return to Sender) parcels, customer exchanges, and restock processing</p>
+                            </div>
+                        </div>
+                        <button onclick="switchTab('logistics', event, this)" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-medium border border-darkborder transition">
+                            <i class="fa-solid fa-arrow-left mr-1"></i> Back to Logistics Hub
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-list-check text-purple-400"></i> Return Status</h4>
+                            <div class="space-y-2 text-xs text-slate-300">
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>RTS Received at Uttara Store</span>
+                                    <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-medium">45 Parcels</span>
+                                </div>
+                                <div class="p-2.5 rounded-lg bg-slate-900/60 border border-darkborder flex justify-between items-center">
+                                    <span>Pending Restock & Quality Check</span>
+                                    <span class="text-[10px] text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded font-medium">12 Parcels</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#07090e]/70 border border-darkborder rounded-xl p-5 space-y-3">
+                            <h4 class="text-sm font-bold text-white flex items-center gap-2"><i class="fa-solid fa-chart-pie text-purple-400"></i> Return Analytics</h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="flex justify-between text-slate-400"><span>Return Rate:</span><span class="text-pink-400 font-bold">5.2%</span></div>
+                                <div class="flex justify-between text-slate-400"><span>Exchange Success:</span><span class="text-emerald-400 font-bold">92%</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `,
             inventory: `
@@ -954,14 +935,10 @@
                 social: "Social Media & Community Engagement",
                 seo: "SEO & Organic Growth",
                 content: "Content & Live Updates Hub",
-                logistics: "Logistic Operation & Complain Management",
-                log_transit: "In Transit Parcel List - Report",
-                log_hold: "Parcel In Hold - Report",
-                log_rider: "Rider Call Attempt - Report",
-                log_mistake: "Mistake Report - Complain",
-                log_damage: "Lost & Damage Parcel - Complain",
-                log_cod: "COD Update Issue - Report",
-                log_return: "Return Parcel - Report",
+                raihan_activity: "Raihan Ahmmed - Activity & Report",
+                ahnaf_activity: "Ahnaf Mahi - Activity & Report",
+                rita_activity: "Rokeya Akter Rita - Activity & Report",
+                maimuna_activity: "Maimuna - Activity & Report",
                 sales: "Tele-Sales Department",
                 customersales: "Sales & Customer Experience",
                 metasales: "Digital Channel (Meta) Sales",
@@ -970,6 +947,14 @@
                 ig_sales: "Instagram Sales Channel",
                 tt_sales: "Tiktok Sales Channel",
                 websitesales: "Website Sales",
+                logistics: "Logistic Operation & Complain Management Hub",
+                transit_parcel: "In Transit Parcel List - Report",
+                hold_parcel: "Parcel In hold - Report",
+                rider_call: "Rider Call Attempt - Report",
+                mistake_report: "Mistake Report - Complain Logs",
+                lost_damage: "Lost and Damage parcel - Claims",
+                cod_issue: "COD Update Issue - Reconciliation",
+                return_parcel: "Return Parcel - RTS Management",
                 inventory: "Inventory & Stock",
                 finance: "Finance & P&L",
                 support: "Support & Operation",
@@ -979,27 +964,31 @@
                 dashboard: "Dashboard Overview",
                 marketing: "Digital Marketing",
                 social: "Social Media",
-                seo: "SEO",
+                seo: "SEO & Organic Growth",
                 content: "Content Hub",
-                logistics: "Logistics Hub",
-                log_transit: "In Transit",
-                log_hold: "Parcel Hold",
-                log_rider: "Rider Calls",
-                log_mistake: "Mistake Report",
-                log_damage: "Damage/Lost",
-                log_cod: "COD Issue",
-                log_return: "Return Parcel",
+                raihan_activity: "Cinematographer Report",
+                ahnaf_activity: "Video Editor Report",
+                rita_activity: "Rita Report",
+                maimuna_activity: "Maimuna Report",
                 sales: "Tele-Sales",
-                customersales: "Sales Exp",
+                customersales: "Sales & Customer Exp",
                 metasales: "Meta Sales",
-                fb_sales: "Facebook",
-                wa_sales: "WhatsApp",
-                ig_sales: "Instagram",
-                tt_sales: "Tiktok",
-                websitesales: "Website",
-                inventory: "Inventory",
-                finance: "Finance",
-                support: "Support",
+                fb_sales: "Facebook Sales",
+                wa_sales: "WhatsApp Sales",
+                ig_sales: "Instagram Sales",
+                tt_sales: "Tiktok Sales",
+                websitesales: "Website Sales",
+                logistics: "Logistics Hub",
+                transit_parcel: "In Transit",
+                hold_parcel: "On Hold",
+                rider_call: "Rider Calls",
+                mistake_report: "Mistake Log",
+                lost_damage: "Lost/Damage",
+                cod_issue: "COD Issue",
+                return_parcel: "Returns",
+                inventory: "Inventory & Stock",
+                finance: "Finance & P&L",
+                support: "Support & Operation",
                 hr: "HR & Admin"
             };
 
@@ -1124,128 +1113,4 @@
                         labels: ['WhatsApp', 'Meta Ads', 'TikTok'],
                         datasets: [{
                             data: [55, 30, 15],
-                            backgroundColor: ['#ec4899', '#10b981', '#3b82f6'],
-                            borderWidth: 0
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: { legend: { display: false } }
-                    }
-                });
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            initDashboardCharts();
-        });
-    </script>
-
-    <!-- Firebase Authentication & Approval Firestore Integration -->
-    <script type="module">
-        const ver = "10.8.0";
-        const base = "https://www.gstatic.com/firebasejs/" + ver;  
-        const { initializeApp } = await import(base + "/firebase-app.js");
-        const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } = await import(base + "/firebase-auth.js");
-        const { getFirestore, doc, getDoc, setDoc } = await import(base + "/firebase-firestore.js");
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyD67_pdiXUkN3VsXcy0sJtBrYI_ijzQZaA",
-            authDomain: "glossy-glow-auth.firebaseapp.com",
-            projectId: "glossy-glow-auth",
-            storageBucket: "glossy-glow-auth.firebasestorage.app",
-            messagingSenderId: "380883757110",
-            appId: "1:380883757110:web:92811d7f902765796f1097",
-            measurementId: "G-Q2K1HGD54G"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        let isSignup = false;
-
-        window.toggleAuthMode = function() {
-            isSignup = !isSignup;
-            document.getElementById('auth-title').innerText = isSignup ? "Create New Account" : "Glossy Glow Login";
-            document.getElementById('auth-btn').innerText = isSignup ? "Sign Up" : "Login";
-            document.getElementById('toggle-text').innerText = isSignup ? "Already have an account?" : "Don't have an account?";
-            document.getElementById('toggle-link').innerText = isSignup ? "Sign Up" : "Login";
-            document.getElementById('auth-error').innerText = "";
-        };
-
-        window.handleAuth = async function() {
-            const email = document.getElementById('user-email').value;
-            const password = document.getElementById('user-password').value;
-            const errorBox = document.getElementById('auth-error');
-
-            if (!email || !password) {
-                errorBox.innerText = "দয়া করে ইমেইল এবং পাসওয়ার্ড দিন!";
-                return;
-            }
-
-            if (isSignup) {
-                try {
-                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-                    
-                    await setDoc(doc(db, "users", user.uid), {
-                        email: email,
-                        approved: false, 
-                        createdAt: new Date()
-                    });
-
-                    alert("সফলভাবে Sign Up হয়েছে! অ্যাডমিন অ্যাপ্রুভ করার পর আপনি ড্যাশবোর্ডে প্রবেশ করতে পারবেন।");
-                    signOut(auth);
-                    toggleAuthMode();
-                } catch (error) {
-                    errorBox.innerText = "Error: " + error.message;
-                }
-            } else {
-                try {
-                    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-
-                    const userDoc = await getDoc(doc(db, "users", user.uid));
-                    if (userDoc.exists() && userDoc.data().approved) {
-                        document.getElementById('auth-screen').style.display = 'none';
-                        document.getElementById('logout-btn').style.display = 'block';
-                    } else {
-                        errorBox.innerText = "আপনার একাউন্টটি এখনো অ্যাডমিন কর্তৃক অনুমোদিত হয়নি।";
-                        signOut(auth);
-                    }
-                } catch (error) {
-                    errorBox.innerText = "Invalid email or password!";
-                }
-            }
-        };
-
-        window.logoutUser = function() {
-            signOut(auth).then(() => {
-                window.location.reload();
-            });
-        };
-
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                try {
-                    const userDoc = await getDoc(doc(db, "users", user.uid));
-                    if (userDoc.exists() && userDoc.data().approved) {
-                        document.getElementById('auth-screen').style.display = 'none';
-                        document.getElementById('logout-btn').style.display = 'block';
-                    } else {
-                        document.getElementById('auth-screen').style.display = 'flex';
-                        document.getElementById('logout-btn').style.display = 'none';
-                        signOut(auth);
-                    }
-                } catch (e) {
-                    console.error(e);
-                }
-            } else {
-                document.getElementById('auth-screen').style.display = 'flex';
-                document.getElementById('logout-btn').style.display = 'none';
-            }
-        });
-    </script>
-</body>
-</html>
+                            backgroundColor: ['#
